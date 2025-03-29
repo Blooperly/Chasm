@@ -502,6 +502,7 @@ function RigSustainCost() {
 function RigSustainAmount() {
 	let sustain = rig_lvl_sustain * 0.5;
 	if (chasm_upgrades[uid.upgrade_workers_11].unlocked) sustain += 1;
+	if (chasm_upgrades[uid.upgrade_mining_rig_5].unlocked) sustain += 1;
 	if (chasm_upgrades[uid.upgrade_mining_rig_4].unlocked) sustain *= 3;
 	if (chasm_upgrades[uid.upgrade_singularity_mining_rig_2].unlocked) sustain *= 3;
 	return sustain;

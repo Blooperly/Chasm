@@ -94,6 +94,7 @@ class _INSPECTOR_ID {
 	upgrade_mining_rig_2						= uid.upgrade_mining_rig_2					+ this.offset_upgrades;
 	upgrade_mining_rig_3						= uid.upgrade_mining_rig_3					+ this.offset_upgrades;
 	upgrade_mining_rig_4						= uid.upgrade_mining_rig_4					+ this.offset_upgrades;
+	upgrade_mining_rig_5						= uid.upgrade_mining_rig_5					+ this.offset_upgrades;
 	upgrade_water_storage						= uid.upgrade_water_storage					+ this.offset_upgrades;
 	upgrade_water_bait_1						= uid.upgrade_water_bait_1					+ this.offset_upgrades;
 	upgrade_water_survey_1						= uid.upgrade_water_survey_1				+ this.offset_upgrades;
@@ -1000,6 +1001,14 @@ function showInspector(id) {
 			$("#inspector_text")	.html("These extra-large Victorian orphans will keep your smokestacks sparkling clean.");
 			$("#inspector_divider")	.css("display", "block");
 			$("#inspector_subtext")	.html("3x Mining Rig sustain time");
+			break;
+		case iid.upgrade_mining_rig_5:
+			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Hot Pocket Technology");
+			$("#inspector_cost")	.css("display", "flex");
+			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_mining_rig_5].cost.stringify());
+			$("#inspector_text")	.html("By studying the physics of hot pockets, you have devised a method for keeping the center of the mining rig engine hotter, longer.");
+			$("#inspector_divider")	.css("display", "block");
+			$("#inspector_subtext")	.html("+1s Mining Rig sustain");
 			break;
 		case iid.upgrade_water_storage:
 			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water storage");
