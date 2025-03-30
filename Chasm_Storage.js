@@ -117,7 +117,7 @@ class ELEMENT_PROBABILITY {
 				effective_workers = effective_workers * 1.1;
 			}
 			if (chasm_upgrades[uid.upgrade_workers_7].unlocked) {
-				effective_workers = effective_workers * 1.5;
+				effective_workers = effective_workers * 1.3;
 			}
 			if (chasm_upgrades[uid.upgrade_singularity_workers_6].unlocked) {
 				effective_workers = effective_workers * 1.1;

@@ -79,7 +79,7 @@ class _UPGRADE_ID {
 	upgrade_workers_4					= 0x003e;	// +1 Worker
 	upgrade_workers_5					= 0x003f;	// +2 Worker
 	upgrade_workers_6					= 0x0040;	// +1 Worker / +20% efficiency
-	upgrade_workers_7					= 0x0041;	// +2 Worker / +50% survey efficiency
+	upgrade_workers_7					= 0x0041;	// +2 Worker / +30% survey efficiency
 	upgrade_workers_8					= 0x0042;	// +1 Worker / +20% jewel value
 	upgrade_workers_9					= 0x0043;	// +1 Worker / +20% metal value
 	upgrade_workers_10					= 0x0044;	// +1 Worker / +30% copper value
@@ -1402,11 +1402,11 @@ function initUpgrades() {
 					"upgrade_workers_6",
 					"images/tile_research_upgrade_workers_6.png",
 					[
-					20,		// Particles
+					30,		// Particles
 					0,		// Strands
 					0,		// Spirit
 					0,		// Soul
-					0.20,	// Anticapital
+					0.40,	// Anticapital
 					0,		// Goo
 					0,		// Core
 					0,		// Bugs
@@ -1421,11 +1421,11 @@ function initUpgrades() {
 					"upgrade_workers_7",
 					"images/tile_research_upgrade_unknown.png",
 					[
-					90,		// Particles
+					100,	// Particles
 					0,		// Strands
 					0,		// Spirit
 					0,		// Soul
-					2.5,	// Anticapital
+					4,		// Anticapital
 					0,		// Goo
 					0,		// Core
 					0,		// Bugs
@@ -1440,11 +1440,11 @@ function initUpgrades() {
 					"upgrade_workers_8",
 					"images/tile_research_upgrade_unknown.png",
 					[
-					45,		// Particles
+					100,	// Particles
 					0,		// Strands
 					0,		// Spirit
 					0,		// Soul
-					2.5,	// Anticapital
+					4,		// Anticapital
 					0,		// Goo
 					0,		// Core
 					0,		// Bugs
@@ -1460,10 +1460,10 @@ function initUpgrades() {
 					"images/tile_research_upgrade_unknown.png",
 					[
 					0,		// Particles
-					6,		// Strands
+					12,		// Strands
 					0,		// Spirit
 					0,		// Soul
-					7.5,	// Anticapital
+					10,		// Anticapital
 					0,		// Goo
 					0,		// Core
 					0,		// Bugs
@@ -1498,10 +1498,10 @@ function initUpgrades() {
 					"images/tile_research_upgrade_unknown.png",
 					[
 					0,		// Particles
-					6,		// Strands
+					12,		// Strands
 					0,		// Spirit
 					0,		// Soul
-					7.5,	// Anticapital
+					10,		// Anticapital
 					0,		// Goo
 					0,		// Core
 					0,		// Bugs

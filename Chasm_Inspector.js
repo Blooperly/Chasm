@@ -1216,7 +1216,7 @@ function showInspector(id) {
 			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_workers_7].cost.stringify());
 			$("#inspector_text")	.html("A bunch of guys with hardhats will significantly improve your mining survey capabilities. The hardhats are key.");
 			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+2 Workers<br>+50% Survey Efficiency");
+			$("#inspector_subtext")	.html("+2 Workers<br>+30% Survey Efficiency");
 			break;
 		case iid.upgrade_workers_8:
 			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Monocle Guy");
