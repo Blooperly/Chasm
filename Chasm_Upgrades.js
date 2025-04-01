@@ -35,7 +35,7 @@ class _UPGRADE_ID {
 	upgrade_earth_chance_3				= 0x0014;	// +0.5% Coal chance
 	upgrade_earth_chance_4				= 0x0015;	// +5% Stone Chance
 	upgrade_earth_chance_5				= 0x0016;	// +0.1% Diamond Chance
-	upgrade_earth_gather_speed_1		= 0x0017;	// Gather +25%
+	upgrade_earth_gather_speed_1		= 0x0017;	// Gather +20%
 	upgrade_earth_gather_speed_2		= 0x0018;	// Gather +10%
 	upgrade_earth_drop_speed_1			= 0x0019;	// Drop +20%
 	upgrade_earth_drop_speed_2			= 0x001a;	// Drop +20%
@@ -399,7 +399,7 @@ function initUpgrades() {
 					8,		// Strands
 					0,		// Spirit
 					0,		// Soul
-					6,		// Anticapital
+					10,		// Anticapital
 					0,		// Goo
 					0,		// Core
 					0,		// Bugs
@@ -1421,11 +1421,11 @@ function initUpgrades() {
 					"upgrade_workers_7",
 					"images/tile_research_upgrade_unknown.png",
 					[
-					100,	// Particles
+					80,	// Particles
 					0,		// Strands
 					0,		// Spirit
 					0,		// Soul
-					4,		// Anticapital
+					8,		// Anticapital
 					0,		// Goo
 					0,		// Core
 					0,		// Bugs
@@ -1440,7 +1440,7 @@ function initUpgrades() {
 					"upgrade_workers_8",
 					"images/tile_research_upgrade_unknown.png",
 					[
-					100,	// Particles
+					80,	// Particles
 					0,		// Strands
 					0,		// Spirit
 					0,		// Soul
@@ -1460,10 +1460,10 @@ function initUpgrades() {
 					"images/tile_research_upgrade_unknown.png",
 					[
 					0,		// Particles
-					12,		// Strands
+					22,		// Strands
 					0,		// Spirit
 					0,		// Soul
-					10,		// Anticapital
+					14,		// Anticapital
 					0,		// Goo
 					0,		// Core
 					0,		// Bugs
@@ -1482,7 +1482,7 @@ function initUpgrades() {
 					0,		// Strands
 					0,		// Spirit
 					1.5,	// Soul
-					25,	// Anticapital
+					40,	// Anticapital
 					0,		// Goo
 					0,		// Core
 					0,		// Bugs
@@ -1498,10 +1498,10 @@ function initUpgrades() {
 					"images/tile_research_upgrade_unknown.png",
 					[
 					0,		// Particles
-					12,		// Strands
+					22,		// Strands
 					0,		// Spirit
 					0,		// Soul
-					10,		// Anticapital
+					14,		// Anticapital
 					0,		// Goo
 					0,		// Core
 					0,		// Bugs
@@ -2640,8 +2640,8 @@ function generateResearchMapEarth() {
 	upgrade_map_earth[mapColRow(7, 17)]		.assign_tile(tid.tile_connect_ud, 	uid.upgrade_count,					[uid.upgrade_earth_value_7]																		);
 	upgrade_map_earth[mapColRow(5, 15)]		.assign_tile(tid.tile_connect_ld, 	uid.upgrade_count,					[uid.upgrade_earth_depth_2]																		);
 	upgrade_map_earth[mapColRow(5, 16)]		.assign_tile(tid.tile_node, 		uid.upgrade_mining_rig_5,			[uid.upgrade_earth_depth_2]																		);
-	upgrade_map_earth[mapColRow(5, 17)]		.assign_tile(tid.tile_connect_ud, 	uid.upgrade_count,																													);
-	upgrade_map_earth[mapColRow(5, 18)]		.assign_tile(tid.tile_node, 		uid.upgrade_earth_value_10,																											);
+	upgrade_map_earth[mapColRow(5, 17)]		.assign_tile(tid.tile_connect_ud, 	uid.upgrade_count,					[uid.upgrade_mining_rig_5]																		);
+	upgrade_map_earth[mapColRow(5, 18)]		.assign_tile(tid.tile_node, 		uid.upgrade_earth_value_10,			[uid.upgrade_mining_rig_5]																		);
 	upgrade_map_earth[mapColRow(5, 19)]		.assign_tile(tid.tile_connect_ur, 	uid.upgrade_count,					[uid.upgrade_earth_value_10]																	);
 	upgrade_map_earth[mapColRow(6, 19)]		.assign_tile(tid.tile_connect_lrd, 	uid.upgrade_count,					[uid.upgrade_earth_value_10],		[uid.upgrade_earth_value_12]								);
 	upgrade_map_earth[mapColRow(7, 18)]		.assign_tile(tid.tile_node, 		uid.upgrade_earth_value_12,			[uid.upgrade_earth_value_7]																		);

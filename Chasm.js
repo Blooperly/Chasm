@@ -219,8 +219,8 @@ function game_tick(scalar) {
 	// Earth Gather
 	let gather_amount = 0;
 	if (chasm_storage[sid.storage_earth].workers_gather > 0) {
-		gather_amount += 20;
-		if (chasm_upgrades[uid.upgrade_earth_gather_speed_1].unlocked) gather_amount *= 1.25;
+		gather_amount += 16;
+		if (chasm_upgrades[uid.upgrade_earth_gather_speed_1].unlocked) gather_amount *= 1.2;
 		if (chasm_upgrades[uid.upgrade_earth_gather_speed_2].unlocked) gather_amount *= 1.1;
 		if (chasm_upgrades[uid.upgrade_workers_6].unlocked) gather_amount *= 1.1;
 		if (chasm_upgrades[uid.upgrade_workers_9].unlocked) gather_amount *= 1.1;

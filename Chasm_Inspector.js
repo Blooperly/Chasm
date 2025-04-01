@@ -880,7 +880,7 @@ function showInspector(id) {
 			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_gather_speed_1].cost.stringify());
 			$("#inspector_text")	.html("Keeping your handle slippery helps to prevent blisters. It's shovel scented.");
 			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+25% earthworks gathering speed");
+			$("#inspector_subtext")	.html("+20% earthworks gathering speed");
 			break;
 		case iid.upgrade_earth_gather_speed_2:
 			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Carcinization");
