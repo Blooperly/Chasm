@@ -105,7 +105,7 @@ function debug_reprice_upgrades() {
 function debug_unlock_upgrades() {
 	if (research_tab_hidden) {
 		research_tab_hidden = false;
-		$("#tab_research").fadeIn(400);
+		$("#tab_research").fadeTo(800, 1);
 	}
 
 	for (let i = uid.upgrade_first; i < uid.upgrade_count; i++) {

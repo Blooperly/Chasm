@@ -111,7 +111,7 @@ class _ACHIEVEMENT {
 			if (!this.isMilestone()) {
 				if (achievement_tab_hidden) {
 					achievement_tab_hidden = false;
-					$("#tab_achievements").fadeIn(400);
+					$("#tab_achievements").fadeTo(800, 1);
 					chasm_log.writeColor("Unlocked: Achievements tab", log_color_unlock);
 				}
 
@@ -392,8 +392,9 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_particles].unlock();
 			if (chasm_currency[cid.currency_particles].hidden) {
 				chasm_currency[cid.currency_particles].hidden = false;
-				$("#currency_particles_symbol").fadeIn(900);
-				$("#currency_particles_value").fadeIn(900);
+				$("#standard_currency_block").fadeTo(800, 1);
+				$("#currency_particles_symbol").fadeTo(800, 1);
+				$("#currency_particles_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -404,7 +405,7 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_research].unlock();
 			if (research_tab_hidden) {
 				research_tab_hidden = false;
-				$("#tab_research").fadeIn(400);
+				$("#tab_research").fadeTo(800, 1);
 			}
 		}
 	}
@@ -415,8 +416,8 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_strands].unlock();
 			if (chasm_currency[cid.currency_strands].hidden) {
 				chasm_currency[cid.currency_strands].hidden = false;
-				$("#currency_strands_symbol").fadeIn(800);
-				$("#currency_strands_value").fadeIn(800);
+				$("#currency_strands_symbol").fadeTo(800, 1);
+				$("#currency_strands_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -427,8 +428,8 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_spirit].unlock();
 			if (chasm_currency[cid.currency_spirit].hidden) {
 				chasm_currency[cid.currency_spirit].hidden = false;
-				$("#currency_spirit_symbol").fadeIn(800);
-				$("#currency_spirit_value").fadeIn(800);
+				$("#currency_spirit_symbol").fadeTo(800, 1);
+				$("#currency_spirit_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -439,8 +440,8 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_soul].unlock();
 			if (chasm_currency[cid.currency_soul].hidden) {
 				chasm_currency[cid.currency_soul].hidden = false;
-				$("#currency_soul_symbol").fadeIn(800);
-				$("#currency_soul_value").fadeIn(800);
+				$("#currency_soul_symbol").fadeTo(800, 1);
+				$("#currency_soul_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -451,8 +452,8 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_capital].unlock();
 			if (chasm_currency[cid.currency_capital].hidden) {
 				chasm_currency[cid.currency_capital].hidden = false;
-				$("#currency_capital_symbol").fadeIn(800);
-				$("#currency_capital_value").fadeIn(800);
+				$("#currency_capital_symbol").fadeTo(800, 1);
+				$("#currency_capital_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -463,8 +464,8 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_goo].unlock();
 			if (chasm_currency[cid.currency_goo].hidden) {
 				chasm_currency[cid.currency_goo].hidden = false;
-				$("#currency_goo_symbol").fadeIn(800);
-				$("#currency_goo_value").fadeIn(800);
+				$("#currency_goo_symbol").fadeTo(800, 1);
+				$("#currency_goo_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -475,8 +476,8 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_core].unlock();
 			if (chasm_currency[cid.currency_core].hidden) {
 				chasm_currency[cid.currency_core].hidden = false;
-				$("#currency_core_symbol").fadeIn(800);
-				$("#currency_core_value").fadeIn(800);
+				$("#currency_core_symbol").fadeTo(800, 1);
+				$("#currency_core_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -487,8 +488,8 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_bugs].unlock();
 			if (chasm_currency[cid.currency_bugs].hidden) {
 				chasm_currency[cid.currency_bugs].hidden = false;
-				$("#currency_bugs_symbol").fadeIn(800);
-				$("#currency_bugs_value").fadeIn(800);
+				$("#currency_bugs_symbol").fadeTo(800, 1);
+				$("#currency_bugs_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -499,8 +500,8 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_machinery].unlock();
 			if (chasm_currency[cid.currency_machinery].hidden) {
 				chasm_currency[cid.currency_machinery].hidden = false;
-				$("#currency_machinery_symbol").fadeIn(800);
-				$("#currency_machinery_value").fadeIn(800);
+				$("#currency_machinery_symbol").fadeTo(800, 1);
+				$("#currency_machinery_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -511,8 +512,9 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_singularity].unlock();
 			if (chasm_currency[cid.currency_singularity].hidden) {
 				chasm_currency[cid.currency_singularity].hidden = false;
-				$("#currency_singularity_symbol").fadeIn(800);
-				$("#currency_singularity_value").fadeIn(800);
+				$("#singularity_currency_block").fadeTo(800, 1);
+				$("#currency_singularity_symbol").fadeTo(800, 1);
+				$("#currency_singularity_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -523,8 +525,8 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_challenge_1].unlock();
 			if (chasm_currency[cid.currency_challenge_1].hidden) {
 				chasm_currency[cid.currency_challenge_1].hidden = false;
-				$("#currency_challenge_1_symbol").fadeIn(800);
-				$("#currency_challenge_1_value").fadeIn(800);
+				$("#currency_challenge_1_symbol").fadeTo(800, 1);
+				$("#currency_challenge_1_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -535,8 +537,8 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_challenge_2].unlock();
 			if (chasm_currency[cid.currency_challenge_2].hidden) {
 				chasm_currency[cid.currency_challenge_2].hidden = false;
-				$("#currency_challenge_2_symbol").fadeIn(800);
-				$("#currency_challenge_2_value").fadeIn(800);
+				$("#currency_challenge_2_symbol").fadeTo(800, 1);
+				$("#currency_challenge_2_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -547,8 +549,8 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_challenge_3].unlock();
 			if (chasm_currency[cid.currency_challenge_3].hidden) {
 				chasm_currency[cid.currency_challenge_3].hidden = false;
-				$("#currency_challenge_3_symbol").fadeIn(800);
-				$("#currency_challenge_3_value").fadeIn(800);
+				$("#currency_challenge_3_symbol").fadeTo(800, 1);
+				$("#currency_challenge_3_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -559,8 +561,8 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_challenge_4].unlock();
 			if (chasm_currency[cid.currency_challenge_4].hidden) {
 				chasm_currency[cid.currency_challenge_4].hidden = false;
-				$("#currency_challenge_4_symbol").fadeIn(800);
-				$("#currency_challenge_4_value").fadeIn(800);
+				$("#currency_challenge_4_symbol").fadeTo(800, 1);
+				$("#currency_challenge_4_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -571,8 +573,8 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_challenge_5].unlock();
 			if (chasm_currency[cid.currency_challenge_5].hidden) {
 				chasm_currency[cid.currency_challenge_5].hidden = false;
-				$("#currency_challenge_5_symbol").fadeIn(800);
-				$("#currency_challenge_5_value").fadeIn(800);
+				$("#currency_challenge_5_symbol").fadeTo(800, 1);
+				$("#currency_challenge_5_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -583,8 +585,8 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_challenge_6].unlock();
 			if (chasm_currency[cid.currency_challenge_6].hidden) {
 				chasm_currency[cid.currency_challenge_6].hidden = false;
-				$("#currency_challenge_6_symbol").fadeIn(800);
-				$("#currency_challenge_6_value").fadeIn(800);
+				$("#currency_challenge_6_symbol").fadeTo(800, 1);
+				$("#currency_challenge_6_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -595,8 +597,8 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_challenge_7].unlock();
 			if (chasm_currency[cid.currency_challenge_7].hidden) {
 				chasm_currency[cid.currency_challenge_7].hidden = false;
-				$("#currency_challenge_7_symbol").fadeIn(800);
-				$("#currency_challenge_7_value").fadeIn(800);
+				$("#currency_challenge_7_symbol").fadeTo(800, 1);
+				$("#currency_challenge_7_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -607,8 +609,8 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_challenge_8].unlock();
 			if (chasm_currency[cid.currency_challenge_8].hidden) {
 				chasm_currency[cid.currency_challenge_8].hidden = false;
-				$("#currency_challenge_8_symbol").fadeIn(800);
-				$("#currency_challenge_8_value").fadeIn(800);
+				$("#currency_challenge_8_symbol").fadeTo(800, 1);
+				$("#currency_challenge_8_value").fadeTo(800, 1);
 			}
 		}
 	}
@@ -619,8 +621,8 @@ function achievement_tick() {
 			chasm_milestones[mid.milestone_reveal_currency_challenge_9].unlock();
 			if (chasm_currency[cid.currency_challenge_9].hidden) {
 				chasm_currency[cid.currency_challenge_9].hidden = false;
-				$("#currency_challenge_9_symbol").fadeIn(800);
-				$("#currency_challenge_9_value").fadeIn(800);
+				$("#currency_challenge_9_symbol").fadeTo(800, 1);
+				$("#currency_challenge_9_value").fadeTo(800, 1);
 			}
 		}
 	}
