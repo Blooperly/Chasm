@@ -73,6 +73,13 @@ form {
 	padding: 0px;
 }
 
+.tabs .tab {
+	-webkit-box-flex: 0;
+	-webkit-flex-grow: 0;
+	-ms-flex-positive: 0;
+	flex-grow: 0;
+}
+
 /* Chasm classes */
 .noble { /* Prevents highlighting/dragging */
 	-webkit-user-select: none;
