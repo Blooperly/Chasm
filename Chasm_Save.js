@@ -28,6 +28,7 @@ class saveData {
 var chasm_save;
 var chasm_incoming_save;
 const save_path = "chasm";
+var auto_save_enabled = true;
 
 function loadSave(savedata) {
 	chasm_save = new saveData();
@@ -71,7 +72,9 @@ function storeSave() {
 }
 
 function autoSave() {
-	storeSave();
+	if (auto_save_enabled) {
+		storeSave();
+	}
 }
 
 function clearSave() {
@@ -194,6 +197,10 @@ function save_unpack_etc(object) {
 // import/export
 function import_save() {
 	try {
+		if ($("#save_data_textbox").val() == "devmode") {
+			activateDevmode();
+			return;
+		}
 		loadSave(JSON.parse($("#save_data_textbox").val()))
 	} catch (error) {
 		chasm_log.writeSectionDivider();

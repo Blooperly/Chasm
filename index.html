@@ -940,34 +940,37 @@
 					</div>
 				
 					<!--Debug Box-->
-					<div id = "cheat_box" class = "card" style = "background-color: #b0bbbf; padding: 5px 5px 5px 5px; margin-bottom: 10px;">
-						<div class = "flex vertcenter">
-							<a id = "debug_gain" class = "waves-effect waves-light btn orange lighten-2 black-text" onclick = "debug_gain();">Gain</a>
-							<div class = "input-field" style = "margin-left: 10px;">
-								<input id = "debug_gain_amount" type = "text" class = "validate" style = "width: 90px;">
-								<label for = "debug_gain_amount">Amount</label>
+					<div id = "devtools_box" style = "display: none;">
+						<p style = "font-family: Tahoma, sans-serif; font-weight: bold; margin-left: 15px;">Dev Tools</p>
+						<div id = "cheat_box" class = "card" style = "background-color: #b0bbbf; padding: 5px 5px 5px 5px; margin-bottom: 10px;">
+							<div class = "flex vertcenter">
+								<a id = "debug_gain" class = "waves-effect waves-light btn orange lighten-2 black-text" onclick = "debug_gain();">Gain</a>
+								<div class = "input-field" style = "margin-left: 10px;">
+									<input id = "debug_gain_amount" type = "text" class = "validate" style = "width: 90px;">
+									<label for = "debug_gain_amount">Amount</label>
+								</div>
+								<div style = "width: 100px; margin-left: 10px;">
+									<select id = "debug_gain_type">
+										<option value = "All" selected = "selected">All</option>
+										<option value = "Particles">Particles</option>
+										<option value = "Strands">Strands</option>
+										<option value = "Capital">Capital</option>
+										<option value = "Soul">Soul</option>
+										<option value = "Spirit">Spirit</option>
+										<option value = "Goo">Goo</option>
+										<option value = "Core">Core</option>
+										<option value = "Bugs">Bugs</option>
+										<option value = "Singularity">Singularity</option>
+										<option value = "Mass">Mass</option>
+										<option value = "Workers">Workers</option>
+										<option value = "Machinery">Machinery</option>
+									</select>
+								</div>
 							</div>
-							<div style = "width: 100px; margin-left: 10px;">
-								<select id = "debug_gain_type">
-									<option value = "All" selected = "selected">All</option>
-									<option value = "Particles">Particles</option>
-									<option value = "Strands">Strands</option>
-									<option value = "Capital">Capital</option>
-									<option value = "Soul">Soul</option>
-									<option value = "Spirit">Spirit</option>
-									<option value = "Goo">Goo</option>
-									<option value = "Core">Core</option>
-									<option value = "Bugs">Bugs</option>
-									<option value = "Singularity">Singularity</option>
-									<option value = "Mass">Mass</option>
-									<option value = "Workers">Workers</option>
-									<option value = "Machinery">Machinery</option>
-								</select>
-							</div>
+							<a id = "debug_free_upgrades" class = "waves-effect waves-light btn orange lighten-2 black-text" onclick = "debug_free_upgrades();">Free Upgrades</a>
+							<a id = "debug_reprice_upgrades" class = "waves-effect waves-light btn orange lighten-2 black-text disabled" onclick = "debug_reprice_upgrades();">Re-price Upgrades</a>
+							<a id = "debug_unlock_achievements" class = "waves-effect waves-light btn orange lighten-2 black-text" onclick = "debug_unlock_achievements();">Unlock Achievements</a>
 						</div>
-						<a id = "debug_free_upgrades" class = "waves-effect waves-light btn orange lighten-2 black-text" onclick = "debug_free_upgrades();">Free Upgrades</a>
-						<a id = "debug_reprice_upgrades" class = "waves-effect waves-light btn orange lighten-2 black-text disabled" onclick = "debug_reprice_upgrades();">Re-price Upgrades</a>
-						<a id = "debug_unlock_achievements" class = "waves-effect waves-light btn orange lighten-2 black-text" onclick = "debug_unlock_achievements();">Unlock Achievements</a>
 					</div>
 				</div>
 			</div>

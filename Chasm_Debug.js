@@ -2,6 +2,13 @@
 	// Functions for debugging/development of Chasm. Don't use these. Or do; I'm not your dad.
 	// Changed to a game settings page with hidden developer/cheat menus
 
+function activateDevmode() {
+	$("#devtools_box").fadeTo(800, 1);
+	auto_save_enabled = false;
+	chasm_log.writeSectionDivider();
+	chasm_log.writeColor("Devmode active", log_color_cheat);
+}
+
 function secondsToString(seconds) {
 	let remainder = seconds;
 	let d, h, m, s;

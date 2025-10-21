@@ -5,6 +5,8 @@
 // | Game Initialization |
 // +---------------------+
 
+var devmode = true;
+
 function game_init() {
 	// Page Initialization
 	$("#lib_chasm_version").html(lib_chasm_version());
@@ -44,6 +46,9 @@ function game_init() {
 	// Load Saved Game
 	loadSave(null);
 	calculateAchievementCount();
+
+	// Devmode Initialization
+	if (devmode) activateDevmode();
 
 	// Loading finished, reveal the game
 	$("#game_box").css("display", "block")
