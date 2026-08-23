@@ -99,10 +99,6 @@ form {
 	border: 1px solid red;
 }
 
-.hidden {
-	display: none;
-}
-
 .pixelart {
 	image-rendering: -moz-crisp-edges;
 	image-rendering: -webkit-crisp-edges;
@@ -245,6 +241,10 @@ form {
 	line-height: 28px;
 	padding: 0px 12px;
 	font-size: 12px;
+}
+
+.hidden {
+	display: none;
 }
 
 /* Chasm id's */

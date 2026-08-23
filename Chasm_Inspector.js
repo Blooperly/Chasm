@@ -177,26 +177,26 @@ function registerInspectorEvents() {
 	$(".currency_workers").each(function(){		$(this).mouseenter(function(){showInspector(iid.currency_workers);});});
 	$(".currency_machinery").each(function(){	$(this).mouseenter(function(){showInspector(iid.currency_machinery);});});
 
-	$(".element_earth_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_earth);});});
-	$(".element_stone_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_stone);});});
-	$(".element_coal_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_coal);});});
-	$(".element_copper_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_copper);});});
-	$(".element_iron_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_iron);});});
-	$(".element_lead_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_lead);});});
-	$(".element_gold_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_gold);});});
-	$(".element_fossil_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_fossil);});});
-	$(".element_emerald_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_emerald);});});
-	$(".element_sapphire_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_sapphire);});});
-	$(".element_ruby_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_ruby);});});
-	$(".element_diamond_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_diamond);});});
-	$(".element_magma_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_magma);});});
-	$(".element_water_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_water);});});
-	$(".element_slime_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_slime);});});
-	$(".element_oil_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_oil);});});
-	$(".element_helium_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_helium);});});
-	$(".element_fish_1_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_fish_1);});});
-	$(".element_fish_2_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_fish_2);});});
-	$(".element_fish_3_inspector").each(function(){$(this).mouseenter(function(){showInspector(iid.element_fish_3);});});
+	$(".element_earth_inspector").each(function(){		$(this).mouseenter(function(){showInspector(iid.element_earth);});});
+	$(".element_stone_inspector").each(function(){		$(this).mouseenter(function(){showInspector(iid.element_stone);});});
+	$(".element_coal_inspector").each(function(){		$(this).mouseenter(function(){showInspector(iid.element_coal);});});
+	$(".element_copper_inspector").each(function(){		$(this).mouseenter(function(){showInspector(iid.element_copper);});});
+	$(".element_iron_inspector").each(function(){		$(this).mouseenter(function(){showInspector(iid.element_iron);});});
+	$(".element_lead_inspector").each(function(){		$(this).mouseenter(function(){showInspector(iid.element_lead);});});
+	$(".element_gold_inspector").each(function(){		$(this).mouseenter(function(){showInspector(iid.element_gold);});});
+	$(".element_fossil_inspector").each(function(){		$(this).mouseenter(function(){showInspector(iid.element_fossil);});});
+	$(".element_emerald_inspector").each(function(){	$(this).mouseenter(function(){showInspector(iid.element_emerald);});});
+	$(".element_sapphire_inspector").each(function(){	$(this).mouseenter(function(){showInspector(iid.element_sapphire);});});
+	$(".element_ruby_inspector").each(function(){		$(this).mouseenter(function(){showInspector(iid.element_ruby);});});
+	$(".element_diamond_inspector").each(function(){	$(this).mouseenter(function(){showInspector(iid.element_diamond);});});
+	$(".element_magma_inspector").each(function(){		$(this).mouseenter(function(){showInspector(iid.element_magma);});});
+	$(".element_water_inspector").each(function(){		$(this).mouseenter(function(){showInspector(iid.element_water);});});
+	$(".element_slime_inspector").each(function(){		$(this).mouseenter(function(){showInspector(iid.element_slime);});});
+	$(".element_oil_inspector").each(function(){		$(this).mouseenter(function(){showInspector(iid.element_oil);});});
+	$(".element_helium_inspector").each(function(){		$(this).mouseenter(function(){showInspector(iid.element_helium);});});
+	$(".element_fish_1_inspector").each(function(){		$(this).mouseenter(function(){showInspector(iid.element_fish_1);});});
+	$(".element_fish_2_inspector").each(function(){		$(this).mouseenter(function(){showInspector(iid.element_fish_2);});});
+	$(".element_fish_3_inspector").each(function(){		$(this).mouseenter(function(){showInspector(iid.element_fish_3);});});
 
 	$("#achievement_babys_first_block")			.mouseenter(function(){showInspector(iid.achievement_babys_first_block);});
 	$("#achievement_reality_sprang_a_leak")		.mouseenter(function(){showInspector(iid.achievement_reality_sprang_a_leak);});
@@ -205,186 +205,206 @@ function registerInspectorEvents() {
 	$("#achievement_eye_feel_extremely_unwell")	.mouseenter(function(){showInspector(iid.achievement_eye_feel_extremely_unwell);});
 }
 
+function setInspectorTitle(html, redraw) {
+	if (redraw) {
+		$("#inspector_title").html(html);
+	}
+}
+
+function setInspectorCost(html, redraw) {
+	if (redraw) {
+		$("#inspector_cost").html(html);
+		if (html == "") {
+			$("#inspector_cost").css("display", "none");
+		} else {
+			$("#inspector_cost").css("display", "flex");
+		}
+	}
+}
+
+function setInspectorText(html, redraw) {
+	if (redraw) {
+		$("#inspector_text").html(html);
+	}
+}
+
+function setInspectorDivider(display, redraw) {
+	if (redraw) {
+		if (display == true) {
+			$("#inspector_divider").css("display", "block");
+		} else {
+			$("#inspector_divider").css("display", "none");
+		}
+	}
+}
+
+function setInspectorSubtext(html, redraw) {
+	if (redraw) {
+		$("#inspector_subtext").html(html);
+	}
+}
+
 var current_inspector_id = iid.none; // Saved id of current inspector panel. Used to redraw inspector.
 
 function showInspector(id) {
+	var redraw_inspector = false;
 	if (id != current_inspector_id) {
 		let selector = $("#inspector_content");
 		selector.stop().fadeTo(0, 0).fadeTo(300, 1);
+		redraw_inspector = true;
 	}
 	switch(id) {
 		// Currency
 		case iid.currency_particles:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_particles].inspector_symbol + "Void Particles");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("When matter is dropped into the Chasm it releases small clouds of nothing. Not nothing... Something? Something that is nothing.");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_particles].inspector_symbol + "Void Particles", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("When matter is dropped into the Chasm it releases small clouds of nothing. Not nothing... Something? Something that is nothing.", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_strands:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_strands].inspector_symbol + "Gravity Strands");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("When dense matter is dropped into the Chasm it releases gossamer strands of gravity. Our researchers say gravity has no carrying particle, but here it is.");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_strands].inspector_symbol + "Gravity Strands", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("When dense matter is dropped into the Chasm it releases gossamer strands of gravity. Our researchers say gravity has no carrying particle, but here it is.", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_spirit:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_spirit].inspector_symbol + "Spirit Sand");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("When living matter is dropped into the Chasm it sprays grains of silver-green sand. Our researchers are convinced this sand has something to do with a metaphysical 'life-force'.");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_spirit].inspector_symbol + "Spirit Sand", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("When living matter is dropped into the Chasm it sprays grains of silver-green sand. Our researchers are convinced this sand has something to do with a metaphysical 'life-force'.", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_soul:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_soul].inspector_symbol + "Pitfire");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("When energy-rich matter is dropped into the Chasm it belches sulpherous clouds of pitfire. Our researchers are using this as a super-dense fuel, and our daredevils are jumping over it for sick motorcycle stunts.");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_soul].inspector_symbol + "Pitfire", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("When energy-rich matter is dropped into the Chasm it belches sulpherous clouds of pitfire. Our researchers are using this as a super-dense fuel, and our daredevils are jumping over it for sick motorcycle stunts.", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_capital:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_capital].inspector_symbol + "Anticapital");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("\"We, who pay dearly for every breath of pure, fresh air, must guard against the tendency to fetter the future. If we succeed in clearing the soil from the rubbish of the past and present, we will leave to posterity the greatest and safest heritages of all ages.\"<br><br>Our researchers seem to be feeling a bit revolutionary. You should probably put this somewhere out of the way before they seize it and establish a democratic mode of production.");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_capital].inspector_symbol + "Anticapital", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("\"We, who pay dearly for every breath of pure, fresh air, must guard against the tendency to fetter the future. If we succeed in clearing the soil from the rubbish of the past and present, we will leave to posterity the greatest and safest heritages of all ages.\"<br><br>Our researchers seem to be feeling a bit revolutionary. You should probably put this somewhere out of the way before they seize it and establish a democratic mode of production.", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_goo:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_goo].inspector_symbol + "Nanocellular Goo");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("When mutant biomass is dropped into the Chasm it froths with a strange orange goo. This goo seems to behave like a biological nanomachine, and is capable of amazing feats when properly trained. Our researchers are giving the goo treats and teaching it how to play fetch.");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_goo].inspector_symbol + "Nanocellular Goo", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("When mutant biomass is dropped into the Chasm it froths with a strange orange goo. This goo seems to behave like a biological nanomachine, and is capable of amazing feats when properly trained. Our researchers are giving the goo treats and teaching it how to play fetch.", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_core:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_core].inspector_symbol + "Mythical Cores");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("When rare cryptids are dropped into the Chasm it bellows with a deep, resonant hum. Once the hum fades, you can find large, glassy orbs dotting the rim of the Chasm. According to our researchers, they seem to be made from embodied belief. It may be possible to use them to influence the world in strange ways.");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_core].inspector_symbol + "Mythical Cores", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("When rare cryptids are dropped into the Chasm it bellows with a deep, resonant hum. Once the hum fades, you can find large, glassy orbs dotting the rim of the Chasm. According to our researchers, they seem to be made from embodied belief. It may be possible to use them to influence the world in strange ways.", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_bugs:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_bugs].inspector_symbol + "Velocity Beetles");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("Okay this one sucks. When you drop agile creatures into the Chasm tiny silver-blue beetles crawl out at a blinding speed. Your researchers have managed to catch a few, and say they can be ground into a paste and converted directly into physical momentum. They remind you of horrible, multi-legged video game hedgehogs.");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_bugs].inspector_symbol + "Velocity Beetles", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("Okay this one sucks. When you drop agile creatures into the Chasm tiny silver-blue beetles crawl out at a blinding speed. Your researchers have managed to catch a few, and say they can be ground into a paste and converted directly into physical momentum. They remind you of horrible, multi-legged video game hedgehogs.", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_singularity:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_singularity].inspector_symbol + "Singularity Marbles");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("You found these at the bottom of the Chasm. Each marble contains a small, stabilized black hole. They will allow you to build permanent structures in the Chasm, in the space between worlds.<br><br>You feel compelled to <a href = 'https://youtu.be/RG6EOci0suI?si=K4i4A9m90IPuUOnC' target = '_blank'>put the marbles in your mouth</a>.");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_singularity].inspector_symbol + "Singularity Marbles", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("You found these at the bottom of the Chasm. Each marble contains a small, stabilized black hole. They will allow you to build permanent structures in the Chasm, in the space between worlds.<br><br>You feel compelled to <a href = 'https://youtu.be/RG6EOci0suI?si=K4i4A9m90IPuUOnC' target = '_blank'>put the marbles in your mouth</a>.", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_challenge_1:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_challenge_1].inspector_symbol + "Ecocide Tokens");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("A token generated by the Chasm as a reward for not destroying the environment. Proof of your commitment to the planet.");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_challenge_1].inspector_symbol + "Ecocide Tokens", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("A token generated by the Chasm as a reward for not destroying the environment. Proof of your commitment to the planet.", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_challenge_2:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_challenge_2].inspector_symbol + "Challenge Token 2");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_challenge_2].inspector_symbol + "Challenge Token 2", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_challenge_3:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_challenge_3].inspector_symbol + "Challenge Token 3");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_challenge_3].inspector_symbol + "Challenge Token 3", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_challenge_4:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_challenge_4].inspector_symbol + "Challenge Token 4");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_challenge_4].inspector_symbol + "Challenge Token 4", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_challenge_5:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_challenge_5].inspector_symbol + "Challenge Token 5");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_challenge_5].inspector_symbol + "Challenge Token 5", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_challenge_6:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_challenge_6].inspector_symbol + "Challenge Token 6");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_challenge_6].inspector_symbol + "Challenge Token 6", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_challenge_7:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_challenge_7].inspector_symbol + "Challenge Token 7");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_challenge_7].inspector_symbol + "Challenge Token 7", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_challenge_8:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_challenge_8].inspector_symbol + "Challenge Token 8");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_challenge_8].inspector_symbol + "Challenge Token 8", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_challenge_9:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_challenge_9].inspector_symbol + "Challenge Token 9");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_challenge_9].inspector_symbol + "Challenge Token 9", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_mass:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_mass].inspector_symbol + "Total Mass");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("You have kept a meticulous count of every bit of mass that has been dropped in the Chasm. How much more until it is satisfied?");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_mass].inspector_symbol + "Total Mass", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("You have kept a meticulous count of every bit of mass that has been dropped in the Chasm. How much more until it is satisfied?", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_workers:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_workers].inspector_symbol + "Workers");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_workers].inspector_symbol + "Workers", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
 			if (chasm_currency[cid.currency_workers].resource.alltime.lte(1)) {
-				$("#inspector_text")	.html("Labor makes the world go round.<br>Right now it's just you.");
+				setInspectorText("Labor makes the world go round.<br>Right now it's just you.", redraw_inspector);
 			} else {
-				$("#inspector_text")	.html("Labor makes the world go round.<br>The crew is busy filling up the Chasm.");
+				setInspectorText("Labor makes the world go round.<br>The crew is busy filling up the Chasm.", redraw_inspector);
 			}
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.currency_machinery:
-			$("#inspector_title")	.html(chasm_currency[cid.currency_machinery].inspector_symbol + "Heavy Machinery");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("When you think about it, forklifts and front loaders are basically the same thing. And you are basically certified to operate a forklift. These things should help you with industrial construction.");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle(chasm_currency[cid.currency_machinery].inspector_symbol + "Heavy Machinery", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("When you think about it, forklifts and front loaders are basically the same thing. And you are basically certified to operate a forklift. These things should help you with industrial construction.", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 
 		// Elements
@@ -395,12 +415,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_earth]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_earth) + "<div style = 'width: 6px;'></div>Dirt");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("The most readily available resource near the mouth of the Chasm. It doesn't seem to do anything special, but you sure can shovel a lot of it.");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: Shallow earth gathering");
+				setInspectorTitle(ElementSample(eid.element_earth) + "<div style = 'width: 6px;'></div>Dirt", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("The most readily available resource near the mouth of the Chasm. It doesn't seem to do anything special, but you sure can shovel a lot of it.", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: Shallow earth gathering", redraw_inspector);
 			}
 			break;
 		case iid.element_stone:
@@ -410,12 +429,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_stone]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_stone) + "<div style = 'width: 6px;'></div>Stone");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: Deep earth gathering");
+				setInspectorTitle(ElementSample(eid.element_stone) + "<div style = 'width: 6px;'></div>Stone", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: Deep earth gathering", redraw_inspector);
 			}
 			break;
 		case iid.element_coal:
@@ -425,12 +443,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_coal]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_coal) + "<div style = 'width: 6px;'></div>Coal");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: Deep earth gathering");
+				setInspectorTitle(ElementSample(eid.element_coal) + "<div style = 'width: 6px;'></div>Coal", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: Deep earth gathering", redraw_inspector);
 			}
 			break;
 		case iid.element_copper:
@@ -440,12 +457,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_copper]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_copper) + "<div style = 'width: 6px;'></div>Copper");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: Deep earth gathering");
+				setInspectorTitle(ElementSample(eid.element_copper) + "<div style = 'width: 6px;'></div>Copper", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: Deep earth gathering", redraw_inspector);
 			}
 			break;
 		case iid.element_iron:
@@ -455,12 +471,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_iron]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_iron) + "<div style = 'width: 6px;'></div>Iron");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: Deep earth gathering");
+				setInspectorTitle(ElementSample(eid.element_iron) + "<div style = 'width: 6px;'></div>Iron", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: Deep earth gathering", redraw_inspector);
 			}
 			break;
 		case iid.element_lead:
@@ -470,12 +485,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_lead]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_lead) + "<div style = 'width: 6px;'></div>Lead");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: Deep earth gathering");
+				setInspectorTitle(ElementSample(eid.element_lead) + "<div style = 'width: 6px;'></div>Lead", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: Deep earth gathering", redraw_inspector);
 			}
 			break;
 		case iid.element_gold:
@@ -485,12 +499,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_gold]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_gold) + "<div style = 'width: 6px;'></div>Gold");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: Deep earth gathering");
+				setInspectorTitle(ElementSample(eid.element_gold) + "<div style = 'width: 6px;'></div>Gold", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: Deep earth gathering", redraw_inspector);
 			}
 			break;
 		case iid.element_fossil:
@@ -500,12 +513,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_fossil]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_fossil) + "<div style = 'width: 6px;'></div>Fossil");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: Deep earth gathering");
+				setInspectorTitle(ElementSample(eid.element_fossil) + "<div style = 'width: 6px;'></div>Fossil", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: Deep earth gathering", redraw_inspector);
 			}
 			break;
 		case iid.element_emerald:
@@ -515,12 +527,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_emerald]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_emerald) + "<div style = 'width: 6px;'></div>Emerald");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: Deep earth gathering");
+				setInspectorTitle(ElementSample(eid.element_emerald) + "<div style = 'width: 6px;'></div>Emerald", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: Deep earth gathering", redraw_inspector);
 			}
 			break;
 		case iid.element_sapphire:
@@ -530,12 +541,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_sapphire]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_sapphire) + "<div style = 'width: 6px;'></div>Sapphire");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: Deep earth gathering");
+				setInspectorTitle(ElementSample(eid.element_sapphire) + "<div style = 'width: 6px;'></div>Sapphire", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: Deep earth gathering", redraw_inspector);
 			}
 			break;
 		case iid.element_ruby:
@@ -545,12 +555,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_ruby]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_ruby) + "<div style = 'width: 6px;'></div>Ruby");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: Deep earth gathering");
+				setInspectorTitle(ElementSample(eid.element_ruby) + "<div style = 'width: 6px;'></div>Ruby", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: Deep earth gathering", redraw_inspector);
 			}
 			break;
 		case iid.element_diamond:
@@ -560,12 +569,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_diamond]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_diamond) + "<div style = 'width: 6px;'></div>Diamond");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: Deep earth gathering");
+				setInspectorTitle(ElementSample(eid.element_diamond) + "<div style = 'width: 6px;'></div>Diamond", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: Deep earth gathering", redraw_inspector);
 			}
 			break;
 		case iid.element_magma:
@@ -575,12 +583,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_magma]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_magma) + "<div style = 'width: 6px;'></div>Magma");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: Deep earth gathering");
+				setInspectorTitle(ElementSample(eid.element_magma) + "<div style = 'width: 6px;'></div>Magma", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: Deep earth gathering", redraw_inspector);
 			}
 			break;
 		case iid.element_water:
@@ -590,12 +597,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_water]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_water) + "<div style = 'width: 6px;'></div>Water");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: Water gathering");
+				setInspectorTitle(ElementSample(eid.element_water) + "<div style = 'width: 6px;'></div>Water", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: Water gathering", redraw_inspector);
 			}
 			break;
 		case iid.element_slime:
@@ -605,12 +611,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_slime]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_slime) + "<div style = 'width: 6px;'></div>Slime");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: Slime gathering");
+				setInspectorTitle(ElementSample(eid.element_slime) + "<div style = 'width: 6px;'></div>Slime", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: Slime gathering", redraw_inspector);
 			}
 			break;
 		case iid.element_oil:
@@ -620,12 +625,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_oil]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_oil) + "<div style = 'width: 6px;'></div>Oil");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: Oil gathering");
+				setInspectorTitle(ElementSample(eid.element_oil) + "<div style = 'width: 6px;'></div>Oil", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: Oil gathering", redraw_inspector);
 			}
 			break;
 		case iid.element_helium:
@@ -635,12 +639,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_helium]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_helium) + "<div style = 'width: 6px;'></div>Helium");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: Helium gathering");
+				setInspectorTitle(ElementSample(eid.element_helium) + "<div style = 'width: 6px;'></div>Helium", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: Helium gathering", redraw_inspector);
 			}
 			break;
 		case iid.element_fish_1:
@@ -650,12 +653,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_fish_1]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_fish_1) + "<div style = 'width: 6px;'></div>Frog");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: River fishing");
+				setInspectorTitle(ElementSample(eid.element_fish_1) + "<div style = 'width: 6px;'></div>Frog", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: River fishing", redraw_inspector);
 			}
 			break;
 		case iid.element_fish_2:
@@ -665,12 +667,11 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_fish_2]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_fish_2) + "<div style = 'width: 6px;'></div>Trout");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: River fishing");
+				setInspectorTitle(ElementSample(eid.element_fish_2) + "<div style = 'width: 6px;'></div>Trout", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: River fishing", redraw_inspector);
 			}
 			break;
 		case iid.element_fish_3:
@@ -680,824 +681,724 @@ function showInspector(id) {
 					element_count[i] = 0;
 				}
 				element_count[eid.element_fish_3]++;
-				$("#inspector_title")	.html(ElementSample(eid.element_fish_3) + "<div style = 'width: 6px;'></div>Salmon");
-				$("#inspector_cost")	.css("display", "flex");
-				$("#inspector_cost")	.html(stringifyValue(elementValue(element_count)));
-				$("#inspector_text")	.html("");
-				$("#inspector_divider")	.css("display", "block");
-				$("#inspector_subtext")	.html("Source: River fishing");
+				setInspectorTitle(ElementSample(eid.element_fish_3) + "<div style = 'width: 6px;'></div>Salmon", redraw_inspector);
+				setInspectorCost(stringifyValue(elementValue(element_count)), true);
+				setInspectorText("", redraw_inspector);
+				setInspectorDivider(true, redraw_inspector);
+				setInspectorSubtext("Source: River fishing", redraw_inspector);
 			}
 			break;
 		
 		// Upgrades
 		case iid.upgrade_earth_density_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Steel-toed Boots");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_density_1].cost.stringify());
-			$("#inspector_text")	.html("You can fit a lot more dirt into your storage with a few well-placed stomps");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("2x Earth density");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Steel-toed Boots", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_density_1].cost.stringify(), true);
+			setInspectorText("You can fit a lot more dirt into your storage with a few well-placed stomps", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("2x Earth density", redraw_inspector);
 			break;
 		case iid.upgrade_earth_density_2:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Tamping Rod");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_density_2].cost.stringify());
-			$("#inspector_text")	.html("A long stick with a flat metal plate at one end. The perfect tool for squishing dirt or less lethal jousting.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("2x Earth density");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Tamping Rod", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_density_2].cost.stringify(), true);
+			setInspectorText("A long stick with a flat metal plate at one end. The perfect tool for squishing dirt or less lethal jousting.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("2x Earth density", redraw_inspector);
 			break;
 		case iid.upgrade_earth_density_3:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Trash Compactor");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_density_3].cost.stringify());
-			$("#inspector_text")	.html("A repurposed trash compactor can smash earth into a dense cube. Ignore the stench and raccoons.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("2x Earth density");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Trash Compactor", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_density_3].cost.stringify(), true);
+			setInspectorText("A repurposed trash compactor can smash earth into a dense cube. Ignore the stench and raccoons.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("2x Earth density", redraw_inspector);
 			break;
 		case iid.upgrade_earth_density_4:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Macrosonic Agitator");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_density_4].cost.stringify());
-			$("#inspector_text")	.html("A marvel of modern science. Vibrates the earth at incredible frequencies to squeeze out every last bit of empty space.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("2x Earth density");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Macrosonic Agitator", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_density_4].cost.stringify(), true);
+			setInspectorText("A marvel of modern science. Vibrates the earth at incredible frequencies to squeeze out every last bit of empty space.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("2x Earth density", redraw_inspector);
 			break;
 		case iid.upgrade_earth_density_5:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Gravity Well");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_density_5].cost.stringify());
-			$("#inspector_text")	.html("A miniature black hole which can compact earth to a ridiculous degree. You can also say it ate your homework.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("2x Earth density");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Gravity Well", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_density_5].cost.stringify(), true);
+			setInspectorText("A miniature black hole which can compact earth to a ridiculous degree. You can also say it ate your homework.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("2x Earth density", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Dustbusting");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_value_1].cost.stringify());
-			$("#inspector_text")	.html("By filtering out some of the lighter dust you can make your earth particles more valuable.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+100% dirt particle value");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Dustbusting", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_1].cost.stringify(), true);
+			setInspectorText("By filtering out some of the lighter dust you can make your earth particles more valuable.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+100% dirt particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_2:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Industrial Waste Handling");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_value_2].cost.stringify());
-			$("#inspector_text")	.html("Our operation is starting to produce a good amount of oily waste... Might as well dump that stuff right into the ground!");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+50% dirt particle value<br>+100% copper particle value");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Industrial Waste Handling", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_2].cost.stringify(), true);
+			setInspectorText("Our operation is starting to produce a good amount of oily waste... Might as well dump that stuff right into the ground!", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+50% dirt particle value<br>+100% copper particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_3:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Heavy Metal Poisoning");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_value_3].cost.stringify());
-			$("#inspector_text")	.html("Bad news, you all have symptoms of heavy metal poisoning. Good news, you can now find even heavier metals!");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+50% metal particle value");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Heavy Metal Poisoning", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_3].cost.stringify(), true);
+			setInspectorText("Bad news, you all have symptoms of heavy metal poisoning. Good news, you can now find even heavier metals!", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+50% metal particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_4:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Marble Quarry");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_value_4].cost.stringify());
-			$("#inspector_text")	.html("This is the perfect spot for finding greek statues, kitchen counters, or food for the unquenchable cosmic maw.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+50% stone particle value");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Marble Quarry", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_4].cost.stringify(), true);
+			setInspectorText("This is the perfect spot for finding greek statues, kitchen counters, or food for the unquenchable cosmic maw.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+50% stone particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_5:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>The Economicon");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_value_5].cost.stringify());
-			$("#inspector_text")	.html("You have acquired a forbidden tome containing eldritch secrets of accounting and economics. Summoning a few finance demons will allow you to artificially inflate the value of emeralds. Neat!");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+50% emerald particle value");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>The Economicon", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_5].cost.stringify(), true);
+			setInspectorText("You have acquired a forbidden tome containing eldritch secrets of accounting and economics. Summoning a few finance demons will allow you to artificially inflate the value of emeralds. Neat!", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+50% emerald particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_6:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Cement Plant");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_value_6].cost.stringify());
-			$("#inspector_text")	.html("A large facility for turning sandy clay and gravel into construction grade cement and concrete. This is a great way to increase the value of your mineshaft byproducts, and will enable even more elaborate construction projects in the future.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+50% dirt particle value<br>+100% stone particle value");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Cement Plant", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_6].cost.stringify(), true);
+			setInspectorText("A large facility for turning sandy clay and gravel into construction grade cement and concrete. This is a great way to increase the value of your mineshaft byproducts, and will enable even more elaborate construction projects in the future.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+50% dirt particle value<br>+100% stone particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_7:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Crypt Coins");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_value_7].cost.stringify());
-			$("#inspector_text")	.html("Your dark powers have grown. You are now able to mint completely valueless coins out of iron. But you can probably convince the Chasm that these coins are \"totally real\" and \"going to the moon\" or something stupid like that.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+300% iron particle value");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Crypt Coins", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_7].cost.stringify(), true);
+			setInspectorText("Your dark powers have grown. You are now able to mint completely valueless coins out of iron. But you can probably convince the Chasm that these coins are \"totally real\" and \"going to the moon\" or something stupid like that.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+300% iron particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_8:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Catastrophic Converter");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_value_8].cost.stringify());
-			$("#inspector_text")	.html("Your researchers have created a machine that enriches coal to be much more fuel-dense, at the cost of being slightly more incredibly harmful for the ozone layer.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+100% coal particle value");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Catastrophic Converter", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_8].cost.stringify(), true);
+			setInspectorText("Your researchers have created a machine that enriches coal to be much more fuel-dense, at the cost of being slightly more incredibly harmful for the ozone layer.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+100% coal particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_9:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Poison Swamp");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_value_9].cost.stringify());
-			$("#inspector_text")	.html("The chemical sludge produced by your mining operation has created a toxic swampland at the edge of the Chasm. Time to buy some wading pants.<br><br>\"But when making the game I rediscovered my love for making poison swamps. I know how people feel about them, but you know, suddenly I realize I'm in the middle of making one and I just can't help myself. <a href = 'https://x.com/hausofdecline/status/1760748342852673658?s=20' target = '_blank'>It just happens.</a>\"");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+100% dirt particle value<br>+100% copper particle value");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Poison Swamp", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_9].cost.stringify(), true);
+			setInspectorText("The chemical sludge produced by your mining operation has created a toxic swampland at the edge of the Chasm. Time to buy some wading pants.<br><br>\"But when making the game I rediscovered my love for making poison swamps. I know how people feel about them, but you know, suddenly I realize I'm in the middle of making one and I just can't help myself. <a href = 'https://x.com/hausofdecline/status/1760748342852673658?s=20' target = '_blank'>It just happens.</a>\"", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+100% dirt particle value<br>+100% copper particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_10:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Ingot Casting Line");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_value_10].cost.stringify());
-			$("#inspector_text")	.html("This is a much cooler way to store all your metal before dumping it into the Chasm. Sometimes you like to build little castles out of the metal bricks.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+200% metal particle mass");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Ingot Casting Line", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_10].cost.stringify(), true);
+			setInspectorText("This is a much cooler way to store all your metal before dumping it into the Chasm. Sometimes you like to build little castles out of the metal bricks.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+200% metal particle mass", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_11:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Jewel Pods");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_value_11].cost.stringify());
-			$("#inspector_text")	.html("Your environmental crimes have forever changed the chemical makeup of the soil beneath your feet. All the jewels in your mine are now mango-bubblegum flavor. Touching them permanently stains your hands though.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+200% jewel particle mass");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Jewel Pods", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_11].cost.stringify(), true);
+			setInspectorText("Your environmental crimes have forever changed the chemical makeup of the soil beneath your feet. All the jewels in your mine are now mango-bubblegum flavor. Touching them permanently stains your hands though.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+200% jewel particle mass", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_12:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Coal Doping");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_value_12].cost.stringify());
-			$("#inspector_text")	.html("Pumping nitrogen into your coal deposits reduces the oxygen content of the porous rock, making the coal burn hotter and longer. Doesn't get the coal high.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+50% coal particle value");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Coal Doping", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_12].cost.stringify(), true);
+			setInspectorText("Pumping nitrogen into your coal deposits reduces the oxygen content of the porous rock, making the coal burn hotter and longer. Doesn't get the coal high.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+50% coal particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_13:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Warehouse Expansion");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_value_13].cost.stringify());
-			$("#inspector_text")	.html("Your growing industrial facility demands a larger storage space for supplies and intermediary products. This upgrade will especially improve your bulk resource processing.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+25% Void Particle gain");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Warehouse Expansion", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_13].cost.stringify(), true);
+			setInspectorText("Your growing industrial facility demands a larger storage space for supplies and intermediary products. This upgrade will especially improve your bulk resource processing.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+25% Void Particle gain", redraw_inspector);
 			break;
 		case iid.upgrade_earth_chance_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Fifty Shades of Green");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_chance_1].cost.stringify());
-			$("#inspector_text")	.html("The hot new book about emerald mining. Lots of pictures of glistening, shirtless miners. Also a few tips on where to find more emeralds.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+2% base emerald chance");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Fifty Shades of Green", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_chance_1].cost.stringify(), true);
+			setInspectorText("The hot new book about emerald mining. Lots of pictures of glistening, shirtless miners. Also a few tips on where to find more emeralds.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+2% base emerald chance", redraw_inspector);
 			break;
 		case iid.upgrade_earth_chance_2:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Penny Flavored Gum");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_chance_2].cost.stringify());
-			$("#inspector_text")	.html("This stuff is disgusting, but you kind of want another piece. Really gets you in the mood to find more copper.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+2% base copper chance");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Penny Flavored Gum", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_chance_2].cost.stringify(), true);
+			setInspectorText("This stuff is disgusting, but you kind of want another piece. Really gets you in the mood to find more copper.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+2% base copper chance", redraw_inspector);
 			break;
 		case iid.upgrade_earth_chance_3:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Spare Lungs");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_chance_3].cost.stringify());
-			$("#inspector_text")	.html("A freezer full of totally legal transplant lungs, just in case all this mining is bad for your health. Not actually that expensive if you buy in bulk.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+0.5% base coal chance");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Spare Lungs", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_chance_3].cost.stringify(), true);
+			setInspectorText("A freezer full of totally legal transplant lungs, just in case all this mining is bad for your health. Not actually that expensive if you buy in bulk.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+0.5% base coal chance", redraw_inspector);
 			break;
 		case iid.upgrade_earth_chance_4:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Lucky Skipping Stone");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_chance_4].cost.stringify());
-			$("#inspector_text")	.html("This perfectly flat river rock makes you feel a little bit lucky. You could get eight, maybe nine skips out of this bad boy.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("Increased chance to find stone instead of dirt, even at shallow depths");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Lucky Skipping Stone", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_chance_4].cost.stringify(), true);
+			setInspectorText("This perfectly flat river rock makes you feel a little bit lucky. You could get eight, maybe nine skips out of this bad boy.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("Increased chance to find stone instead of dirt, even at shallow depths", redraw_inspector);
 			break;
 		case iid.upgrade_earth_chance_5:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Jackpot State of Mind");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_chance_5].cost.stringify());
-			$("#inspector_text")	.html("Gambling is a scam. This upgrade is almost certainly not worth it, but you are going to buy it anyway. All the subliminal advertising in this game is starting to pay off.<br><br><span style = 'font-size: 4px;'>buy Our Queen Crumbles <a href = 'https://blooperly.itch.io/our-queen-crumbles' target = '_blank'>here</a></span>");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+0.1% base diamond chance, even at shallow depths");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Jackpot State of Mind", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_chance_5].cost.stringify(), true);
+			setInspectorText("Gambling is a scam. This upgrade is almost certainly not worth it, but you are going to buy it anyway. All the subliminal advertising in this game is starting to pay off.<br><br><span style = 'font-size: 4px;'>buy Our Queen Crumbles <a href = 'https://blooperly.itch.io/our-queen-crumbles' target = '_blank'>here</a></span>", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+0.1% base diamond chance, even at shallow depths", redraw_inspector);
 			break;
 		case iid.upgrade_earth_gather_speed_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Shovel Lotion");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_gather_speed_1].cost.stringify());
-			$("#inspector_text")	.html("Keeping your handle slippery helps to prevent blisters. It's shovel scented.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+20% earthworks gathering speed");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Shovel Lotion", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_gather_speed_1].cost.stringify(), true);
+			setInspectorText("Keeping your handle slippery helps to prevent blisters. It's shovel scented.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+20% earthworks gathering speed", redraw_inspector);
 			break;
 		case iid.upgrade_earth_gather_speed_2:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Carcinization");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_gather_speed_2].cost.stringify());
-			$("#inspector_text")	.html("Exposure to all this stinky pollution has slightly changed your genetic code. You are now 3% crab: the crustacean so nice, they made it twice. Your claws make digging a little easier, and everything else a lot harder.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+10% earthworks gathering speed");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Carcinization", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_gather_speed_2].cost.stringify(), true);
+			setInspectorText("Exposure to all this stinky pollution has slightly changed your genetic code. You are now 3% crab: the crustacean so nice, they made it twice. Your claws make digging a little easier, and everything else a lot harder.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+10% earthworks gathering speed", redraw_inspector);
 			break;
 		case iid.upgrade_earth_drop_speed_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Pulley System");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_drop_speed_1].cost.stringify());
-			$("#inspector_text")	.html("A pulley system is much better than the pushy system you were using before.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+20% earth dropping speed");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Pulley System", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_drop_speed_1].cost.stringify(), true);
+			setInspectorText("A pulley system is much better than the pushy system you were using before.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+20% earth dropping speed", redraw_inspector);
 			break;
 		case iid.upgrade_earth_drop_speed_2:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Spring-loaded Elevator");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_drop_speed_2].cost.stringify());
-			$("#inspector_text")	.html("The first version of this elevator played jack-in-the-box music, but everyone hated it. Now it plays Weezer.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+10% earth dropping speed");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Spring-loaded Elevator", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_drop_speed_2].cost.stringify(), true);
+			setInspectorText("The first version of this elevator played jack-in-the-box music, but everyone hated it. Now it plays Weezer.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+10% earth dropping speed", redraw_inspector);
 			break;
 		case iid.upgrade_earth_metals_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Surveying Tools");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_metals_1].cost.stringify());
-			$("#inspector_text")	.html("A pickaxe, some charts, and a metal detector. Just barely better than guessing where metal ore deposits are in the ground.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("Unlock the Surveying job");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Surveying Tools", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_metals_1].cost.stringify(), true);
+			setInspectorText("A pickaxe, some charts, and a metal detector. Just barely better than guessing where metal ore deposits are in the ground.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("Unlock the Surveying job", redraw_inspector);
 			break;
 		case iid.upgrade_earth_depth_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Mining Rights");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_depth_1].cost.stringify());
-			$("#inspector_text")	.html("It feels a bit silly to dig next to the yawning mouth of the Chasm, but there's some really good stuff down there.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("Unlock deep mining<br>+1 Heavy Machinery");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Mining Rights", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_depth_1].cost.stringify(), true);
+			setInspectorText("It feels a bit silly to dig next to the yawning mouth of the Chasm, but there's some really good stuff down there.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("Unlock deep mining<br>+1 Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_earth_depth_2:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Notarized Mining Rights");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_depth_2].cost.stringify());
-			$("#inspector_text")	.html("Your old mining permit was a bit... forged. This one should stand up to even moderate scrutiny!");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("max depth +1<br>+1 Heavy Machinery");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Notarized Mining Rights", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_depth_2].cost.stringify(), true);
+			setInspectorText("Your old mining permit was a bit... forged. This one should stand up to even moderate scrutiny!", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_earth_depth_3:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Bloodpact Mining Rights");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_depth_3].cost.stringify());
-			$("#inspector_text")	.html("The Fringe Researcher insists that a document signed in blood will allow you to dig much deeper. That doesn't sound real, but you've got plenty of blood. Might as well try!<br>Does not come with heavy machinery. You will need to find another source better suited for the high-pressure environment...");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("max depth +1");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Bloodpact Mining Rights", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_depth_3].cost.stringify(), true);
+			setInspectorText("The Fringe Researcher insists that a document signed in blood will allow you to dig much deeper. That doesn't sound real, but you've got plenty of blood. Might as well try!<br>Does not come with heavy machinery. You will need to find another source better suited for the high-pressure environment...", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("max depth +1", redraw_inspector);
 			break;
 		case iid.upgrade_earth_depth_4:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Double Notarized Bloodpact");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_depth_4].cost.stringify());
-			$("#inspector_text")	.html("This document is now so laden with ink, blood, and wax seals that it is barely legible. Your legal team is thrilled.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("max depth +1<br>+1 Heavy Machinery");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Double Notarized Bloodpact", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_depth_4].cost.stringify(), true);
+			setInspectorText("This document is now so laden with ink, blood, and wax seals that it is barely legible. Your legal team is thrilled.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_earth_depth_5:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Royal Mining Rights");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_depth_5].cost.stringify());
-			$("#inspector_text")	.html("The Fringe Researcher has spent his free time tracing the lineage of the royal family who used to own the land around the Chasm. The heir is willing to sell you ancient land rights, for a price.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("max depth +1<br>+1 Heavy Machinery");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Royal Mining Rights", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_depth_5].cost.stringify(), true);
+			setInspectorText("The Fringe Researcher has spent his free time tracing the lineage of the royal family who used to own the land around the Chasm. The heir is willing to sell you ancient land rights, for a price.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_earth_depth_6:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Deep Mining Rights");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_depth_6].cost.stringify());
-			$("#inspector_text")	.html("You had your lawyers add in a few clauses protecting you from any liability for \"accidental plate shattering, geo-terrorism, and/or volcanic armageddon\"");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("max depth +1<br>+1 Heavy Machinery");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Deep Mining Rights", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_depth_6].cost.stringify(), true);
+			setInspectorText("You had your lawyers add in a few clauses protecting you from any liability for \"accidental plate shattering, geo-terrorism, and/or volcanic armageddon\"", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_earth_depth_7 :
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Blessed Mining Rights");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_earth_depth_7].cost.stringify());
-			$("#inspector_text")	.html("Apparently the only way to dig \"all the way to Hell\" is to get your documentation blessed. You should keep an eye out for God in the Chasm, maybe he will help you out.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("max depth +1<br>+1 Heavy Machinery");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Blessed Mining Rights", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_depth_7].cost.stringify(), true);
+			setInspectorText("Apparently the only way to dig \"all the way to Hell\" is to get your documentation blessed. You should keep an eye out for God in the Chasm, maybe he will help you out.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_mining_rig_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>There Will Be Dirt");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_mining_rig_1].cost.stringify());
-			$("#inspector_text")	.html("This giant industrial mining rig will speed up your gathering as long as you keep it fueled. Hopefully unrelenting greed won't result in your ultimate downfall. I drink your milkshake!");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("Unlock the Mining Rig");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>There Will Be Dirt", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_mining_rig_1].cost.stringify(), true);
+			setInspectorText("This giant industrial mining rig will speed up your gathering as long as you keep it fueled. Hopefully unrelenting greed won't result in your ultimate downfall. I drink your milkshake!", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("Unlock the Mining Rig", redraw_inspector);
 			break;
 		case iid.upgrade_mining_rig_2:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Modular Mining Rig");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_mining_rig_2].cost.stringify());
-			$("#inspector_text")	.html("Swapping out parts of the mining rig should let you improve it incrementally. Mine harder, better, faster, stronger.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("Unlock Mining Rig upgrades");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Modular Mining Rig", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_mining_rig_2].cost.stringify(), true);
+			setInspectorText("Swapping out parts of the mining rig should let you improve it incrementally. Mine harder, better, faster, stronger.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("Unlock Mining Rig upgrades", redraw_inspector);
 			break;
 		case iid.upgrade_mining_rig_3:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Pilot Light");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_mining_rig_3].cost.stringify());
-			$("#inspector_text")	.html("It takes a lot of work to keep the Mining Rig running. A little bit of Pitfire will help to keep the motor from freezing up.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("Mining Rig will not drop below 10% heat");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Pilot Light", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_mining_rig_3].cost.stringify(), true);
+			setInspectorText("It takes a lot of work to keep the Mining Rig running. A little bit of Pitfire will help to keep the motor from freezing up.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("Mining Rig will not drop below 10% heat", redraw_inspector);
 			break;
 		case iid.upgrade_mining_rig_4:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Industrial Chimney Sweeps");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_mining_rig_4].cost.stringify());
-			$("#inspector_text")	.html("These extra-large Victorian orphans will keep your smokestacks sparkling clean.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("3x Mining Rig sustain time");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Industrial Chimney Sweeps", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_mining_rig_4].cost.stringify(), true);
+			setInspectorText("These extra-large Victorian orphans will keep your smokestacks sparkling clean.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("3x Mining Rig sustain time", redraw_inspector);
 			break;
 		case iid.upgrade_mining_rig_5:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Hot Pocket Technology");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_mining_rig_5].cost.stringify());
-			$("#inspector_text")	.html("By studying the physics of hot pockets, you have devised a method for keeping the center of the mining rig engine hotter, longer.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1s Mining Rig sustain");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Hot Pocket Technology", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_mining_rig_5].cost.stringify(), true);
+			setInspectorText("By studying the physics of hot pockets, you have devised a method for keeping the center of the mining rig engine hotter, longer.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1s Mining Rig sustain", redraw_inspector);
 			break;
 		case iid.upgrade_water_storage:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water storage");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_storage].cost.stringify());
-			$("#inspector_text")	.html("Dumping water into the Chasm might speed things up, but you'll have to build a water pumping station first.");
-			$("#inspector_subtext")	.html("Unlock Waterworks");
-			$("#inspector_divider")	.css("display", "block");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water storage", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_storage].cost.stringify(), true);
+			setInspectorText("Dumping water into the Chasm might speed things up, but you'll have to build a water pumping station first.", redraw_inspector);
+			setInspectorSubtext("Unlock Waterworks", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
 			break;
 		case iid.upgrade_water_bait_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Bait Box");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_bait_1].cost.stringify());
-			$("#inspector_text")	.html("The Angler has developed special fishing bait made from the Chasm's materials. It works even better than the hotdogs you were using before. This bait will help you satisfy the Chasm's peculiar hunger for more exotic fish.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("Unlock the Bait Box");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Bait Box", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_bait_1].cost.stringify(), true);
+			setInspectorText("The Angler has developed special fishing bait made from the Chasm's materials. It works even better than the hotdogs you were using before. This bait will help you satisfy the Chasm's peculiar hunger for more exotic fish.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("Unlock the Bait Box", redraw_inspector);
 			break;
 		case iid.upgrade_water_survey_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Fishing Report");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_survey_1].cost.stringify());
-			$("#inspector_text")	.html("The Angler can use his keen knowledge of the sea, the stars, the color of the sunrise, and a high-tech fish-finding sonar to predict exactly what fish you can find at different depths.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("Unlock the Fishing Report");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Fishing Report", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_survey_1].cost.stringify(), true);
+			setInspectorText("The Angler can use his keen knowledge of the sea, the stars, the color of the sunrise, and a high-tech fish-finding sonar to predict exactly what fish you can find at different depths.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("Unlock the Fishing Report", redraw_inspector);
 			break;
 		case iid.upgrade_water_value_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Blue Dye Number 3");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_value_1].cost.stringify());
-			$("#inspector_text")	.html("It turns out natural water is clear, not electric blue like the ocean in a movie. Your researches say that a generous dose of food coloring will improve the hydration.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+100% water particle value");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Blue Dye Number 3", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_value_1].cost.stringify(), true);
+			setInspectorText("It turns out natural water is clear, not electric blue like the ocean in a movie. Your researches say that a generous dose of food coloring will improve the hydration.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+100% water particle value", redraw_inspector);
 			break;
 		case iid.upgrade_water_value_2:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Value 2");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_value_2].cost.stringify());
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Value 2", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_value_2].cost.stringify(), true);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.upgrade_water_value_3:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Value 3");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_value_3].cost.stringify());
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Value 3", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_value_3].cost.stringify(), true);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.upgrade_water_value_4:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Value 4");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_value_4].cost.stringify());
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Value 4", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_value_4].cost.stringify(), true);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.upgrade_water_value_5:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Value 5");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_value_5].cost.stringify());
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Value 5", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_value_5].cost.stringify(), true);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.upgrade_water_value_6:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Value 6");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_value_6].cost.stringify());
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Value 6", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_value_6].cost.stringify(), true);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.upgrade_water_value_7:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Value 7");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_value_7].cost.stringify());
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Value 7", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_value_7].cost.stringify(), true);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.upgrade_water_value_8:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Value 8");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_value_8].cost.stringify());
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Value 8", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_value_8].cost.stringify(), true);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.upgrade_water_gather_speed_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Muscular Pumps");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_gather_speed_1].cost.stringify());
-			$("#inspector_text")	.html("Hit a new PR by sending your pumps to the gym. Now they look pretty swole.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+20% waterworks gathering speed");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Muscular Pumps", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_gather_speed_1].cost.stringify(), true);
+			setInspectorText("Hit a new PR by sending your pumps to the gym. Now they look pretty swole.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+20% waterworks gathering speed", redraw_inspector);
 			break;
 		case iid.upgrade_water_depth_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Diving Bell");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_depth_1].cost.stringify());
-			$("#inspector_text")	.html("Harvesting fish from deeper in the ocean will require specialized equipment to pump liquid and keep your fishermen alive. An industrial diving bell is a good platform for venturing into the depths.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("Unlock deep pumping<br>+1 Heavy Machinery");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Diving Bell", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_depth_1].cost.stringify(), true);
+			setInspectorText("Harvesting fish from deeper in the ocean will require specialized equipment to pump liquid and keep your fishermen alive. An industrial diving bell is a good platform for venturing into the depths.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("Unlock deep pumping<br>+1 Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_water_depth_2:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 2");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_depth_2].cost.stringify());
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("max depth +1<br>+1 Heavy Machinery");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 2", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_depth_2].cost.stringify(), true);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_water_depth_3:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 3");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_depth_3].cost.stringify());
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("max depth +1<br>+1 Heavy Machinery");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 3", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_depth_3].cost.stringify(), true);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_water_depth_4:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 4");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_depth_4].cost.stringify());
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("max depth +1<br>+1 Heavy Machinery");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 4", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_depth_4].cost.stringify(), true);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_water_depth_5:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 5");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_depth_5].cost.stringify());
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("max depth +1<br>+1 Heavy Machinery");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 5", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_depth_5].cost.stringify(), true);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_water_depth_6:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 6");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_depth_6].cost.stringify());
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("max depth +1<br>+1 Heavy Machinery");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 6", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_depth_6].cost.stringify(), true);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_water_depth_7:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 7");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_water_depth_7].cost.stringify());
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("max depth +1<br>+1 Heavy Machinery");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 7", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_water_depth_7].cost.stringify(), true);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_workers_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Fringe Researcher");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_workers_1].cost.stringify());
-			$("#inspector_text")	.html("You know a guy who would be very interested in studying the exotic materials coming out of the Chasm. He is a bit of a conspiracy nut, but you can probably convince him to shovel dirt.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1 Worker");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Fringe Researcher", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_workers_1].cost.stringify(), true);
+			setInspectorText("You know a guy who would be very interested in studying the exotic materials coming out of the Chasm. He is a bit of a conspiracy nut, but you can probably convince him to shovel dirt.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1 Worker", redraw_inspector);
 			break;
 		case iid.upgrade_workers_2:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Internship Program");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_workers_2].cost.stringify());
-			$("#inspector_text")	.html("Filling the Chasm is exhausting—just get a college student to do it. All the labor of an employee with none of the pay!");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1 Worker");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Internship Program", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_workers_2].cost.stringify(), true);
+			setInspectorText("Filling the Chasm is exhausting—just get a college student to do it. All the labor of an employee with none of the pay!", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1 Worker", redraw_inspector);
 			break;
 		case iid.upgrade_workers_3:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Gig Worker");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_workers_3].cost.stringify());
-			$("#inspector_text")	.html("You found an app where you can hire manual labor for cheap! Hopefully the regulators don't catch on.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1 Worker");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Gig Worker", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_workers_3].cost.stringify(), true);
+			setInspectorText("You found an app where you can hire manual labor for cheap! Hopefully the regulators don't catch on.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1 Worker", redraw_inspector);
 			break;
 		case iid.upgrade_workers_4:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Old Timey Prospector");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_workers_4].cost.stringify());
-			$("#inspector_text")	.html("This old coot is willing to help you fill the Chasm, but first you must prove that there is ore in them there hills.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1 Worker");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Old Timey Prospector", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_workers_4].cost.stringify(), true);
+			setInspectorText("This old coot is willing to help you fill the Chasm, but first you must prove that there is ore in them there hills.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1 Worker", redraw_inspector);
 			break;
 		case iid.upgrade_workers_5:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Creepy Twins");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_workers_5].cost.stringify());
-			$("#inspector_text")	.html("The Fringe Researcher has reported a pair of creepy children haunting the dark corners of the worksite... Is it even child labor if the children are ghosts?");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+2 Workers");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Creepy Twins", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_workers_5].cost.stringify(), true);
+			setInspectorText("The Fringe Researcher has reported a pair of creepy children haunting the dark corners of the worksite... Is it even child labor if the children are ghosts?", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+2 Workers", redraw_inspector);
 			break;
 		case iid.upgrade_workers_6:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>HR Department");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_workers_6].cost.stringify());
-			$("#inspector_text")	.html("It seems like you can't grow your team much more without a hearty stockpile of office snacks, a bevy of teambuilding exercises, and 30 hours of incredibly boring training videos.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1 Worker<br>+10% Worker Efficiency");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>HR Department", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_workers_6].cost.stringify(), true);
+			setInspectorText("It seems like you can't grow your team much more without a hearty stockpile of office snacks, a bevy of teambuilding exercises, and 30 hours of incredibly boring training videos.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1 Worker<br>+10% Worker Efficiency", redraw_inspector);
 			break;
 		case iid.upgrade_workers_7:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Survey Crew");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_workers_7].cost.stringify());
-			$("#inspector_text")	.html("A bunch of guys with hardhats will significantly improve your mining survey capabilities. The hardhats are key.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+2 Workers<br>+30% Survey Efficiency");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Survey Crew", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_workers_7].cost.stringify(), true);
+			setInspectorText("A bunch of guys with hardhats will significantly improve your mining survey capabilities. The hardhats are key.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+2 Workers<br>+30% Survey Efficiency", redraw_inspector);
 			break;
 		case iid.upgrade_workers_8:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Monocle Guy");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_workers_8].cost.stringify());
-			$("#inspector_text")	.html("Every company needs a fancy old man with a top hat and monocle to peer intensely at their gems and crystals. Why else would you dig up gems and crystals?");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1 Worker<br>+20% Jewel Value");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Monocle Guy", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_workers_8].cost.stringify(), true);
+			setInspectorText("Every company needs a fancy old man with a top hat and monocle to peer intensely at their gems and crystals. Why else would you dig up gems and crystals?", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1 Worker<br>+20% Jewel Value", redraw_inspector);
 			break;
 		case iid.upgrade_workers_9:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Jackhammer Jockey");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_workers_9].cost.stringify());
-			$("#inspector_text")	.html("The cowboys of the modern construction crew. A short ride on the iron stallion will shatter even the most stubborn boulders. They are also really good on a pogo stick.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1 Worker<br>+10% earthworks gathering speed");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Jackhammer Jockey", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_workers_9].cost.stringify(), true);
+			setInspectorText("The cowboys of the modern construction crew. A short ride on the iron stallion will shatter even the most stubborn boulders. They are also really good on a pogo stick.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1 Worker<br>+10% earthworks gathering speed", redraw_inspector);
 			break;
 		case iid.upgrade_workers_10:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Italian Plumber");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_workers_10].cost.stringify());
-			$("#inspector_text")	.html("Not the one you are thinking of. Or the other one you are thinking of.<br><br>This guy even knows where to dig up some copper pipes.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1 Worker<br>+50% copper particle value");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Italian Plumber", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_workers_10].cost.stringify(), true);
+			setInspectorText("Not the one you are thinking of. Or the other one you are thinking of.<br><br>This guy even knows where to dig up some copper pipes.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1 Worker<br>+50% copper particle value", redraw_inspector);
 			break;
 		case iid.upgrade_workers_11:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Gas Station Attendant");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_workers_11].cost.stringify());
-			$("#inspector_text")	.html("Winner of the 1994 Gas Station Olympics in Barcelona. He's no longer in his prime, but he is still pretty good at fueling vehicles.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1 Worker<br>+1s Mining Rig sustain");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Gas Station Attendant", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_workers_11].cost.stringify(), true);
+			setInspectorText("Winner of the 1994 Gas Station Olympics in Barcelona. He's no longer in his prime, but he is still pretty good at fueling vehicles.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1 Worker<br>+1s Mining Rig sustain", redraw_inspector);
 			break;
 		case iid.upgrade_workers_12:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Dedicated Salaryman");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_workers_12].cost.stringify());
-			$("#inspector_text")	.html("This guy will do anything for a moderate salary and some really bad healthcare. His job is the center of the universe, his reason for being. He is the perfect drone.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1 Worker");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Dedicated Salaryman", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_workers_12].cost.stringify(), true);
+			setInspectorText("This guy will do anything for a moderate salary and some really bad healthcare. His job is the center of the universe, his reason for being. He is the perfect drone.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1 Worker", redraw_inspector);
 			break;
 		case iid.upgrade_challenge_ecocide:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Ecocide Prevention");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_challenge_ecocide].cost.stringify());
-			$("#inspector_text")	.html("You had the chance to destroy the environment for your own personal profit, but you didn't do it! Good job! You are a hero.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1 Ecocide Token on singularity");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Ecocide Prevention", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_challenge_ecocide].cost.stringify(), true);
+			setInspectorText("You had the chance to destroy the environment for your own personal profit, but you didn't do it! Good job! You are a hero.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1 Ecocide Token on singularity", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_workers_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Doppelgänger");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_singularity_workers_1].cost.stringify());
-			$("#inspector_text")	.html("After jumping into the Chasm you wake up on the surface once again, but this time you are not alone. The Chasm is empty and the work site has disappeared, but there is another version of you just starting to get to work.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1 Worker per Singularity reset<br>(max 5)");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Doppelgänger", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_workers_1].cost.stringify(), true);
+			setInspectorText("After jumping into the Chasm you wake up on the surface once again, but this time you are not alone. The Chasm is empty and the work site has disappeared, but there is another version of you just starting to get to work.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1 Worker per Singularity reset<br>(max 5)", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_workers_2:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Bigfoot");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_singularity_workers_2].cost.stringify());
-			$("#inspector_text")	.html("This universe is the only one where Bigfoot exists, and he looks almost exactly like the Fringe Researcher. You had better bring him with you.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1 Worker<br>+20% Mass gain");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Bigfoot", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_workers_2].cost.stringify(), true);
+			setInspectorText("This universe is the only one where Bigfoot exists, and he looks almost exactly like the Fringe Researcher. You had better bring him with you.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1 Worker<br>+20% Mass gain", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_workers_3:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Intern Sarcophagus");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_singularity_workers_3].cost.stringify());
-			$("#inspector_text")	.html("You have crafted a grim and terrible artefact which can carry a single Intern through the Chasm, across the threshold between worlds. They still won't be paid.<br>Don't forget to poke a few air holes.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1 Worker<br>+25% Anticapital gain");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Intern Sarcophagus", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_workers_3].cost.stringify(), true);
+			setInspectorText("You have crafted a grim and terrible artefact which can carry a single Intern through the Chasm, across the threshold between worlds. They still won't be paid.<br>Don't forget to poke a few air holes.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1 Worker<br>+25% Anticapital gain", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_workers_4:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Timey Wimey Prospector");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_singularity_workers_4].cost.stringify());
-			$("#inspector_text")	.html("The prospector in this universe is young, British, and weirdly hot. He seems to know a lot about temporal paradoxes. It's probably a good idea to hire someone who can tell you if you are about to destroy the universe.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1 Worker<br>+50% metal particle value");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Timey Wimey Prospector", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_workers_4].cost.stringify(), true);
+			setInspectorText("The prospector in this universe is young, British, and weirdly hot. He seems to know a lot about temporal paradoxes. It's probably a good idea to hire someone who can tell you if you are about to destroy the universe.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1 Worker<br>+50% metal particle value", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_workers_5:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Creepier Twins");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_singularity_workers_5].cost.stringify());
-			$("#inspector_text")	.html("The twins are way more evil after traveling through the Chasm. Their eyes glow, they crab walk everywhere, and one of them ate your lunch. These guys are the worst.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+2 Workers");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Creepier Twins", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_workers_5].cost.stringify(), true);
+			setInspectorText("The twins are way more evil after traveling through the Chasm. Their eyes glow, they crab walk everywhere, and one of them ate your lunch. These guys are the worst.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+2 Workers", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_workers_6:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Omniversal HR Department");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_singularity_workers_6].cost.stringify());
-			$("#inspector_text")	.html("The HR department has figured out how to hire staff across every parallel universe at once. This will save a ton of time on recruiting, but company parties are going to get much harder to plan.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("Keep first 6 worker upgrades on reset<br>+1 Worker<br>+10% Worker Efficiency");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Omniversal HR Department", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_workers_6].cost.stringify(), true);
+			setInspectorText("The HR department has figured out how to hire staff across every parallel universe at once. This will save a ton of time on recruiting, but company parties are going to get much harder to plan.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("Keep first 6 worker upgrades on reset<br>+1 Worker<br>+10% Worker Efficiency", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_workers_7:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Trippelgänger");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_singularity_workers_7].cost.stringify());
-			$("#inspector_text")	.html("You have found a way to copy your Doppelgängers using the Chasm. These ones seem a bit... off. But small heads and extra arms are good for mining, right?");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1 Worker per 2 Singularity resets<br>(after Doppelgänger)<br>(max 5)");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Trippelgänger", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_workers_7].cost.stringify(), true);
+			setInspectorText("You have found a way to copy your Doppelgängers using the Chasm. These ones seem a bit... off. But small heads and extra arms are good for mining, right?", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1 Worker per 2 Singularity resets<br>(after Doppelgänger)<br>(max 5)", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_workers_8:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Gängerbanger");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_singularity_workers_8].cost.stringify());
-			$("#inspector_text")	.html("You have found a way to copy your Trippelgängers using the Chasm. Don't look too hard at these guys, they are only barely passable as human. It seems that repeated paracausal cloning is not good for the human form.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1 Worker per 4 Singularity resets<br>(after Trippelgänger)<br>(max 5)");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Gängerbanger", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_workers_8].cost.stringify(), true);
+			setInspectorText("You have found a way to copy your Trippelgängers using the Chasm. Don't look too hard at these guys, they are only barely passable as human. It seems that repeated paracausal cloning is not good for the human form.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1 Worker per 4 Singularity resets<br>(after Trippelgänger)<br>(max 5)", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_earth_value_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Gate to Hell");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_singularity_earth_value_1].cost.stringify());
-			$("#inspector_text")	.html("You accidentally set the mines on fire, and the vast coal seams contain enough energy to burn for decades. On the plus side, flaming coal is worth more than regular coal.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+100% coal particle value");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Gate to Hell", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_earth_value_1].cost.stringify(), true);
+			setInspectorText("You accidentally set the mines on fire, and the vast coal seams contain enough energy to burn for decades. On the plus side, flaming coal is worth more than regular coal.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+100% coal particle value", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_earth_value_2:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>The Atoms Family Issue #1");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_singularity_earth_value_2].cost.stringify());
-			$("#inspector_text")	.html("Your employees have organized a Void Particle Physics Fan Club. One of them has even written a fan-fic comic where two particles fall in love and start a family. It's a bit weird, but it seems to be working.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+50% Void Particle gain");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>The Atoms Family Issue #1", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_earth_value_2].cost.stringify(), true);
+			setInspectorText("Your employees have organized a Void Particle Physics Fan Club. One of them has even written a fan-fic comic where two particles fall in love and start a family. It's a bit weird, but it seems to be working.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+50% Void Particle gain", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_survey_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Reverse Precognition");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_singularity_survey_1].cost.stringify());
-			$("#inspector_text")	.html("Your large, pulsating brain has developed the ability to predict where valuable mining veins are by remembering where they were the last time you dug them up.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("Earth Survey level is raised by 1");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Reverse Precognition", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_survey_1].cost.stringify(), true);
+			setInspectorText("Your large, pulsating brain has developed the ability to predict where valuable mining veins are by remembering where they were the last time you dug them up.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("Earth Survey level is raised by 1", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_survey_2:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>RGB Mining Lanterns");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_singularity_survey_2].cost.stringify());
-			$("#inspector_text")	.html("Upgrade your mining lanterns to sweet RGB LEDs instead of lame oil. This will obviously increase the game's FPS.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("+1% base emerald chance<br>+0.5% base sapphire chance<br>+0.1% base ruby chance");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>RGB Mining Lanterns", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_survey_2].cost.stringify(), true);
+			setInspectorText("Upgrade your mining lanterns to sweet RGB LEDs instead of lame oil. This will obviously increase the game's FPS.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+1% base emerald chance<br>+0.5% base sapphire chance<br>+0.1% base ruby chance", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_mining_rig_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Subspace Mining Rig");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_singularity_mining_rig_1].cost.stringify());
-			$("#inspector_text")	.html("Driving your Mining Rig into the Chasm is much faster than rebuilding it on the other side.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("Keep Mining Rig upgrades on reset");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Subspace Mining Rig", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_mining_rig_1].cost.stringify(), true);
+			setInspectorText("Driving your Mining Rig into the Chasm is much faster than rebuilding it on the other side.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("Keep Mining Rig upgrades on reset", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_mining_rig_2:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Semi-perpetual Motion Machine");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_singularity_mining_rig_2].cost.stringify());
-			$("#inspector_text")	.html("This machine will keep your Mining Rig running 60% of the time, all the time.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("3x Mining Rig sustain");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Semi-perpetual Motion Machine", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_mining_rig_2].cost.stringify(), true);
+			setInspectorText("This machine will keep your Mining Rig running 60% of the time, all the time.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("3x Mining Rig sustain", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_mining_rig_3:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Anti-thermal Paste");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_singularity_mining_rig_3].cost.stringify());
-			$("#inspector_text")	.html("A small tube of this silver goo will keep your Mining Rig from leaking so much heat. No matter how little you apply, it is always too much.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("50% slower Mining Rig decay");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Anti-thermal Paste", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_mining_rig_3].cost.stringify(), true);
+			setInspectorText("A small tube of this silver goo will keep your Mining Rig from leaking so much heat. No matter how little you apply, it is always too much.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("50% slower Mining Rig decay", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_ascend_1:
-			$("#inspector_title")	.html("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Pit Suspenders");
-			$("#inspector_cost")	.css("display", "flex");
-			$("#inspector_cost")	.html(chasm_upgrades[uid.upgrade_singularity_ascend_1].cost.stringify());
-			$("#inspector_text")	.html("A pair of dapper suspenders that stretch allllll the way down. Your sensors are reporting that they make the bottomless pit significantly less infinite.");
-			$("#inspector_divider")	.css("display", "block");
-			$("#inspector_subtext")	.html("-25% singularity base cost");
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Pit Suspenders", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_ascend_1].cost.stringify(), true);
+			setInspectorText("A pair of dapper suspenders that stretch allllll the way down. Your sensors are reporting that they make the bottomless pit significantly less infinite.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("-25% singularity base cost", redraw_inspector);
 			break;
 
 		// Achievements
 		case iid.achievement_unknown:
-			$("#inspector_title")	.html("???");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("Achievement unknown");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle("???", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("Achievement unknown", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.achievement_babys_first_block:
 			if (chasm_achievements[aid.achievement_babys_first_block].unlocked) {
-				$("#inspector_title")	.html("<img src = 'images/a_babys_first_block.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Baby's First Block");
-				$("#inspector_cost")	.css("display", "none");
-				$("#inspector_cost")	.html("");
-				$("#inspector_text")	.html("You still remember dropping your first block into the Chasm... Things were simpler back then.");
-				$("#inspector_divider")	.css("display", "none");
-				$("#inspector_subtext")	.html("");
+				setInspectorTitle("<img src = 'images/a_babys_first_block.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Baby's First Block", redraw_inspector);
+				setInspectorCost("", redraw_inspector);
+				setInspectorText("You still remember dropping your first block into the Chasm... Things were simpler back then.", redraw_inspector);
+				setInspectorDivider(false, redraw_inspector);
+				setInspectorSubtext("", redraw_inspector);
 			} else {
-				$("#inspector_title")	.html("<img src = 'images/a_babys_first_block.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>Baby's First Block");
-				$("#inspector_cost")	.css("display", "none");
-				$("#inspector_cost")	.html("");
-				$("#inspector_text")	.html("Drop 1 block of earth into the Chasm");
-				$("#inspector_divider")	.css("display", "none");
-				$("#inspector_subtext")	.html("");
+				setInspectorTitle("<img src = 'images/a_babys_first_block.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>Baby's First Block", redraw_inspector);
+				setInspectorCost("", redraw_inspector);
+				setInspectorText("Drop 1 block of earth into the Chasm", redraw_inspector);
+				setInspectorDivider(false, redraw_inspector);
+				setInspectorSubtext("", redraw_inspector);
 			}
 			break;
 		case iid.achievement_reality_sprang_a_leak:
 			if (chasm_achievements[aid.achievement_reality_sprang_a_leak].unlocked) {
-				$("#inspector_title")	.html("<img src = 'images/a_reality_sprang.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Reality Sprang a Leak");
-				$("#inspector_cost")	.css("display", "none");
-				$("#inspector_cost")	.html("");
-				$("#inspector_text")	.html("Dropping things into the Chasm seems to release clouds of nothing. I'm pretty sure the universe isn't supposed to do that.");
-				$("#inspector_divider")	.css("display", "none");
-				$("#inspector_subtext")	.html("");
+				setInspectorTitle("<img src = 'images/a_reality_sprang.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Reality Sprang a Leak", redraw_inspector);
+				setInspectorCost("", redraw_inspector);
+				setInspectorText("Dropping things into the Chasm seems to release clouds of nothing. I'm pretty sure the universe isn't supposed to do that.", redraw_inspector);
+				setInspectorDivider(false, redraw_inspector);
+				setInspectorSubtext("", redraw_inspector);
 			} else {
-				$("#inspector_title")	.html("<img src = 'images/a_reality_sprang.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>Reality Sprang a Leak");
-				$("#inspector_cost")	.html("");
-				$("#inspector_text")	.html("Collect 1 total void particle");
-				$("#inspector_divider")	.css("display", "none");
-				$("#inspector_subtext")	.html("");
+				setInspectorTitle("<img src = 'images/a_reality_sprang.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>Reality Sprang a Leak", redraw_inspector);
+				setInspectorCost("", redraw_inspector);
+				setInspectorText("Collect 1 total void particle", redraw_inspector);
+				setInspectorDivider(false, redraw_inspector);
+				setInspectorSubtext("", redraw_inspector);
 			}
 			break;
 		case iid.achievement_nothing_to_worry_about:
 			if (chasm_achievements[aid.achievement_nothing_to_worry_about].unlocked) {
-				$("#inspector_title")	.html("<img src = 'images/a_nothing_to_worry_about.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Nothing to Worry About");
-				$("#inspector_cost")	.css("display", "none");
-				$("#inspector_cost")	.html("");
-				$("#inspector_text")	.html("How much nothing can there be, anyway?");
-				$("#inspector_divider")	.css("display", "none");
-				$("#inspector_subtext")	.html("");
+				setInspectorTitle("<img src = 'images/a_nothing_to_worry_about.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Nothing to Worry About", redraw_inspector);
+				setInspectorCost("", redraw_inspector);
+				setInspectorText("How much nothing can there be, anyway?", redraw_inspector);
+				setInspectorDivider(false, redraw_inspector);
+				setInspectorSubtext("", redraw_inspector);
 			} else {
-				$("#inspector_title")	.html("<img src = 'images/a_nothing_to_worry_about.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>Nothing to Worry About");
-				$("#inspector_cost")	.css("display", "none");
-				$("#inspector_cost")	.html("");
-				$("#inspector_text")	.html("Collect 100 total void particles");
-				$("#inspector_divider")	.css("display", "none");
-				$("#inspector_subtext")	.html("");
+				setInspectorTitle("<img src = 'images/a_nothing_to_worry_about.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>Nothing to Worry About", redraw_inspector);
+				setInspectorCost("", redraw_inspector);
+				setInspectorText("Collect 100 total void particles", redraw_inspector);
+				setInspectorDivider(false, redraw_inspector);
+				setInspectorSubtext("", redraw_inspector);
 			}
 			break;
 		case iid.achievement_minor_case_of_wormhole:
 			if (chasm_achievements[aid.achievement_minor_case_of_wormhole].unlocked) {
-				$("#inspector_title")	.html("<img src = 'images/a_minor_case_of_wormhole.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>A Minor Case of Wormhole");
-				$("#inspector_cost")	.css("display", "none");
-				$("#inspector_cost")	.html("");
-				$("#inspector_text")	.html("Worms? In MY hole??");
-				$("#inspector_divider")	.css("display", "none");
-				$("#inspector_subtext")	.html("");
+				setInspectorTitle("<img src = 'images/a_minor_case_of_wormhole.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>A Minor Case of Wormhole", redraw_inspector);
+				setInspectorCost("", redraw_inspector);
+				setInspectorText("Worms? In MY hole??", redraw_inspector);
+				setInspectorDivider(false, redraw_inspector);
+				setInspectorSubtext("", redraw_inspector);
 			} else {
-				$("#inspector_title")	.html("<img src = 'images/a_minor_case_of_wormhole.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>A Minor Case of Wormhole");
-				$("#inspector_cost")	.css("display", "none");
-				$("#inspector_cost")	.html("");
-				$("#inspector_text")	.html("Collect 10,000 total void particles");
-				$("#inspector_divider")	.css("display", "none");
-				$("#inspector_subtext")	.html("");
+				setInspectorTitle("<img src = 'images/a_minor_case_of_wormhole.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>A Minor Case of Wormhole", redraw_inspector);
+				setInspectorCost("", redraw_inspector);
+				setInspectorText("Collect 10,000 total void particles", redraw_inspector);
+				setInspectorDivider(false, redraw_inspector);
+				setInspectorSubtext("", redraw_inspector);
 			}
 			break;
 		case iid.achievement_eye_feel_extremely_unwell:
 			if (chasm_achievements[aid.achievement_eye_feel_extremely_unwell].unlocked) {
-				$("#inspector_title")	.html("<img src = 'images/a_eye_feel_extremely_unwell.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Eye Feel Extremely Unwell");
-				$("#inspector_cost")	.css("display", "none");
-				$("#inspector_cost")	.html("");
-				$("#inspector_text")	.html("If you gaze long enough into the abyss... The abyss will sprout creepy eyes and wink at you.");
-				$("#inspector_divider")	.css("display", "none");
-				$("#inspector_subtext")	.html("");
+				setInspectorTitle("<img src = 'images/a_eye_feel_extremely_unwell.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Eye Feel Extremely Unwell", redraw_inspector);
+				setInspectorCost("", redraw_inspector);
+				setInspectorText("If you gaze long enough into the abyss... The abyss will sprout creepy eyes and wink at you.", redraw_inspector);
+				setInspectorDivider(false, redraw_inspector);
+				setInspectorSubtext("", redraw_inspector);
 			} else {
-				$("#inspector_title")	.html("<img src = 'images/a_eye_feel_extremely_unwell.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>Eye Feel Extremely Unwell");
-				$("#inspector_cost")	.css("display", "none");
-				$("#inspector_cost")	.html("");
-				$("#inspector_text")	.html("Collect 1,000,000 total void particles");
-				$("#inspector_divider")	.css("display", "none");
-				$("#inspector_subtext")	.html("");
+				setInspectorTitle("<img src = 'images/a_eye_feel_extremely_unwell.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>Eye Feel Extremely Unwell", redraw_inspector);
+				setInspectorCost("", redraw_inspector);
+				setInspectorText("Collect 1,000,000 total void particles", redraw_inspector);
+				setInspectorDivider(false, redraw_inspector);
+				setInspectorSubtext("", redraw_inspector);
 			}
 			break;
 
 		// Clear
 		case iid.none:
 		default:
-			$("#inspector_title")	.html("");
-			$("#inspector_cost")	.css("display", "none");
-			$("#inspector_cost")	.html("");
-			$("#inspector_text")	.html("");
-			$("#inspector_divider")	.css("display", "none");
-			$("#inspector_subtext")	.html("");
+			setInspectorTitle("", redraw_inspector);
+			setInspectorCost("", redraw_inspector);
+			setInspectorText("", redraw_inspector);
+			setInspectorDivider(false, redraw_inspector);
+			setInspectorSubtext("", redraw_inspector);
 	}
 
 	current_inspector_id = id;
