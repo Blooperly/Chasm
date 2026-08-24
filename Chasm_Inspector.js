@@ -310,7 +310,7 @@ function showInspector(id) {
 		case iid.currency_bugs:
 			setInspectorTitle(chasm_currency[cid.currency_bugs].inspector_symbol + "Velocity Beetles", redraw_inspector);
 			setInspectorCost("", redraw_inspector);
-			setInspectorText("Okay this one sucks. When you drop agile creatures into the Chasm tiny silver-blue beetles crawl out at a blinding speed. Your researchers have managed to catch a few, and say they can be ground into a paste and converted directly into physical momentum. They remind you of horrible, multi-legged video game hedgehogs.", redraw_inspector);
+			setInspectorText("Okay, this one sucks. When you drop agile creatures into the Chasm tiny silver-blue beetles crawl out at a blinding speed. Your researchers have managed to catch a few, and say they can be ground into a paste and converted directly into physical momentum. They remind you of horrible, multi-legged video game hedgehogs.", redraw_inspector);
 			setInspectorDivider(false, redraw_inspector);
 			setInspectorSubtext("", redraw_inspector);
 			break;
