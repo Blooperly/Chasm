@@ -777,7 +777,7 @@ function showInspector(id) {
 		case iid.upgrade_earth_value_7:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Crypt Coins", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_7].cost.stringify(), true);
-			setInspectorText("Your dark powers have grown. You are now able to mint completely valueless coins out of iron. But you can probably convince the Chasm that these coins are \"totally real\" and \"going to the moon\" or something stupid like that.", redraw_inspector);
+			setInspectorText("Your dark powers have grown. You are now able to mint completely valueless coins out of iron.<br><br>You can probably convince the Chasm that these coins are \"totally real\" and \"going to the moon\" or something stupid like that.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
 			setInspectorSubtext("+300% " + ElementSample(eid.element_iron) + elementbuffer + "iron particle value", redraw_inspector);
 			break;
