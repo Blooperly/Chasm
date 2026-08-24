@@ -560,6 +560,8 @@ function refresh_ui() {
 
 	// Currency
 	if (chasm_milestones[mid.milestone_reveal_currency_particles].unlocked) {
+		$("#standard_currency_block").css("display", "block");
+
 		chasm_currency[cid.currency_particles].hidden = false;
 		$("#currency_particles_symbol").css("display", "block");
 		$("#currency_particles_value").css("display", "block");
