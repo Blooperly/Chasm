@@ -152,6 +152,7 @@ class ELEMENT_PROBABILITY {
 			// Coal chance bias
 			let clb = 0;
 			if (chasm_upgrades[uid.upgrade_earth_chance_3].unlocked) clb += 5;
+			if (chasm_upgrades[uid.upgrade_earth_chance_6].unlocked) clb += 3;
 
 			// Sink bias
 			let sib = 0;

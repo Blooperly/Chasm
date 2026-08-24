@@ -78,6 +78,7 @@ class _INSPECTOR_ID {
 	upgrade_earth_chance_3						= uid.upgrade_earth_chance_3				+ this.offset_upgrades;
 	upgrade_earth_chance_4						= uid.upgrade_earth_chance_4				+ this.offset_upgrades;
 	upgrade_earth_chance_5						= uid.upgrade_earth_chance_5				+ this.offset_upgrades;
+	upgrade_earth_chance_6						= uid.upgrade_earth_chance_6				+ this.offset_upgrades;
 	upgrade_earth_gather_speed_1				= uid.upgrade_earth_gather_speed_1			+ this.offset_upgrades;
 	upgrade_earth_gather_speed_2				= uid.upgrade_earth_gather_speed_2			+ this.offset_upgrades;
 	upgrade_earth_drop_speed_1					= uid.upgrade_earth_drop_speed_1			+ this.offset_upgrades;
@@ -857,6 +858,13 @@ function showInspector(id) {
 			setInspectorText("Gambling is a scam. This upgrade is almost certainly not worth it, but you are going to buy it anyway. All the subliminal advertising in this game is starting to pay off.<br><br><span style = 'font-size: 4px;'>buy Our Queen Crumbles <a href = 'https://blooperly.itch.io/our-queen-crumbles' target = '_blank'>here</a></span>", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
 			setInspectorSubtext("+0.1% base " + ElementSample(eid.element_diamond) + elementbuffer + "diamond chance," + flexbreak + "even at shallow depths", redraw_inspector);
+			break;
+		case iid.upgrade_earth_chance_6:
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Hyperscale Fuel Depot", redraw_inspector);
+			setInspectorCost(chasm_upgrades[uid.upgrade_earth_chance_6].cost.stringify(), true);
+			setInspectorText("Just about the worst thing you could possibly have in your backyard. A stinky storage place for hot slop.", redraw_inspector);
+			setInspectorDivider(true, redraw_inspector);
+			setInspectorSubtext("+0.3% base " + ElementSample(eid.element_coal) + elementbuffer + "coal chance", redraw_inspector);
 			break;
 		case iid.upgrade_earth_gather_speed_1:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Shovel Lotion", redraw_inspector);

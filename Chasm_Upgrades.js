@@ -35,78 +35,79 @@ class _UPGRADE_ID {
 	upgrade_earth_chance_3				= 0x0014;	// +0.5% Coal chance
 	upgrade_earth_chance_4				= 0x0015;	// +5% Stone Chance
 	upgrade_earth_chance_5				= 0x0016;	// +0.1% Diamond Chance
-	upgrade_earth_gather_speed_1		= 0x0017;	// Gather +20%
-	upgrade_earth_gather_speed_2		= 0x0018;	// Gather +10%
-	upgrade_earth_drop_speed_1			= 0x0019;	// Drop +20%
-	upgrade_earth_drop_speed_2			= 0x001a;	// Drop +20%
-	upgrade_earth_metals_1				= 0x001b;	// Unlock surveying
-	upgrade_earth_depth_1				= 0x001c;	// Unlock depth
-	upgrade_earth_depth_2				= 0x001d;	// Max depth +1
-	upgrade_earth_depth_3				= 0x001e;	// Max depth +1
-	upgrade_earth_depth_4				= 0x001f;	// Max depth +1
-	upgrade_earth_depth_5				= 0x0020;	// Max depth +1
-	upgrade_earth_depth_6				= 0x0021;	// Max depth +1
-	upgrade_earth_depth_7				= 0x0022;	// Max depth +1
-	upgrade_mining_rig_1				= 0x0023;	// Unlock mining rig
-	upgrade_mining_rig_2				= 0x0024;	// Unlock mining rig upgrades
-	upgrade_mining_rig_3				= 0x0025;	// Heat never drops below 10%
-	upgrade_mining_rig_4				= 0x0026;	// 3x sustain
-	upgrade_mining_rig_5				= 0x0027;	// +1s sustain
+	upgrade_earth_chance_6				= 0x0017;	// +0.3% Coal chance
+	upgrade_earth_gather_speed_1		= 0x0018;	// Gather +20%
+	upgrade_earth_gather_speed_2		= 0x0019;	// Gather +10%
+	upgrade_earth_drop_speed_1			= 0x001a;	// Drop +20%
+	upgrade_earth_drop_speed_2			= 0x001b;	// Drop +20%
+	upgrade_earth_metals_1				= 0x001c;	// Unlock surveying
+	upgrade_earth_depth_1				= 0x001d;	// Unlock depth
+	upgrade_earth_depth_2				= 0x001e;	// Max depth +1
+	upgrade_earth_depth_3				= 0x001f;	// Max depth +1
+	upgrade_earth_depth_4				= 0x0020;	// Max depth +1
+	upgrade_earth_depth_5				= 0x0021;	// Max depth +1
+	upgrade_earth_depth_6				= 0x0022;	// Max depth +1
+	upgrade_earth_depth_7				= 0x0023;	// Max depth +1
+	upgrade_mining_rig_1				= 0x0024;	// Unlock mining rig
+	upgrade_mining_rig_2				= 0x0025;	// Unlock mining rig upgrades
+	upgrade_mining_rig_3				= 0x0026;	// Heat never drops below 10%
+	upgrade_mining_rig_4				= 0x0027;	// 3x sustain
+	upgrade_mining_rig_5				= 0x0028;	// +1s sustain
 	
-	upgrade_water_storage				= 0x0028;	// Unlock water storage
-	upgrade_water_bait_1				= 0x0029;	// Unlock bait
-	upgrade_water_survey_1				= 0x002a;	// Unlock fishing report
-	upgrade_water_value_1				= 0x002b;	// +100% Water value
-	upgrade_water_value_2				= 0x002c;	//
-	upgrade_water_value_3				= 0x002d;	//
-	upgrade_water_value_4				= 0x002e;	//
-	upgrade_water_value_5				= 0x002f;	//
-	upgrade_water_value_6				= 0x0030;	//
-	upgrade_water_value_7				= 0x0031;	//
-	upgrade_water_value_8				= 0x0032;	//
-	upgrade_water_gather_speed_1		= 0x0033;	// Gather +20%
-	upgrade_water_depth_1				= 0x0034;	// Unlock depth
-	upgrade_water_depth_2				= 0x0035;	// Max depth +1
-	upgrade_water_depth_3				= 0x0036;	// Max depth +1
-	upgrade_water_depth_4				= 0x0037;	// Max depth +1
-	upgrade_water_depth_5				= 0x0038;	// Max depth +1
-	upgrade_water_depth_6				= 0x0039;	// Max depth +1
-	upgrade_water_depth_7				= 0x003a;	// Max depth +1
+	upgrade_water_storage				= 0x0029;	// Unlock water storage
+	upgrade_water_bait_1				= 0x002a;	// Unlock bait
+	upgrade_water_survey_1				= 0x002b;	// Unlock fishing report
+	upgrade_water_value_1				= 0x002c;	// +100% Water value
+	upgrade_water_value_2				= 0x002d;	//
+	upgrade_water_value_3				= 0x002e;	//
+	upgrade_water_value_4				= 0x002f;	//
+	upgrade_water_value_5				= 0x0030;	//
+	upgrade_water_value_6				= 0x0031;	//
+	upgrade_water_value_7				= 0x0032;	//
+	upgrade_water_value_8				= 0x0033;	//
+	upgrade_water_gather_speed_1		= 0x0034;	// Gather +20%
+	upgrade_water_depth_1				= 0x0035;	// Unlock depth
+	upgrade_water_depth_2				= 0x0036;	// Max depth +1
+	upgrade_water_depth_3				= 0x0037;	// Max depth +1
+	upgrade_water_depth_4				= 0x0038;	// Max depth +1
+	upgrade_water_depth_5				= 0x0039;	// Max depth +1
+	upgrade_water_depth_6				= 0x003a;	// Max depth +1
+	upgrade_water_depth_7				= 0x003b;	// Max depth +1
 	
-	upgrade_workers_1					= 0x003b;	// +1 Worker
-	upgrade_workers_2					= 0x003c;	// +1 Worker
-	upgrade_workers_3					= 0x003d;	// +1 Worker
-	upgrade_workers_4					= 0x003e;	// +1 Worker
-	upgrade_workers_5					= 0x003f;	// +2 Worker
-	upgrade_workers_6					= 0x0040;	// +1 Worker / +20% efficiency
-	upgrade_workers_7					= 0x0041;	// +2 Worker / +30% survey efficiency
-	upgrade_workers_8					= 0x0042;	// +1 Worker / +20% jewel value
-	upgrade_workers_9					= 0x0043;	// +1 Worker / +20% metal value
-	upgrade_workers_10					= 0x0044;	// +1 Worker / +30% copper value
-	upgrade_workers_11					= 0x0045;	// +1 Worker / +20% metal value
-	upgrade_workers_12					= 0x0046;	// +1 Worker
+	upgrade_workers_1					= 0x003c;	// +1 Worker
+	upgrade_workers_2					= 0x003d;	// +1 Worker
+	upgrade_workers_3					= 0x003e;	// +1 Worker
+	upgrade_workers_4					= 0x003f;	// +1 Worker
+	upgrade_workers_5					= 0x0040;	// +2 Worker
+	upgrade_workers_6					= 0x0041;	// +1 Worker / +20% efficiency
+	upgrade_workers_7					= 0x0042;	// +2 Worker / +30% survey efficiency
+	upgrade_workers_8					= 0x0043;	// +1 Worker / +20% jewel value
+	upgrade_workers_9					= 0x0044;	// +1 Worker / +20% metal value
+	upgrade_workers_10					= 0x0045;	// +1 Worker / +30% copper value
+	upgrade_workers_11					= 0x0046;	// +1 Worker / +20% metal value
+	upgrade_workers_12					= 0x0047;	// +1 Worker
 	
-	upgrade_challenge_ecocide			= 0x0047;	// Ecocide Challenge
+	upgrade_challenge_ecocide			= 0x0048;	// Ecocide Challenge
 	
 	// Singularity upgrades
-	upgrade_singularity_workers_1		= 0x0048;	// +1 Worker per reset
-	upgrade_singularity_workers_2		= 0x0049;	// +1 Worker / +20% mass gain
-	upgrade_singularity_workers_3		= 0x004a;	// +1 Worker / +25% anticapital gain
-	upgrade_singularity_workers_4		= 0x004b;	// +1 Worker / +50% metal value
-	upgrade_singularity_workers_5		= 0x004c;	// +2 Worker
-	upgrade_singularity_workers_6		= 0x004d;	// Keep worker upgrades on reset
-	upgrade_singularity_workers_7		= 0x004e;	// +0.5 Worker per reset
-	upgrade_singularity_workers_8		= 0x004f;	// +0.25 Worker per reset
-	upgrade_singularity_earth_value_1	= 0x0050;	// 3x coal particle value
-	upgrade_singularity_earth_value_2	= 0x0051;	// 1.5x singularity particle gain
-	upgrade_singularity_survey_1		= 0x0052;	// +1 Effective Survey
-	upgrade_singularity_survey_2		= 0x0053;	// +base jewel particle chance
-	upgrade_singularity_mining_rig_1	= 0x0054;	// Keep Mining Rig upgrades on reset
-	upgrade_singularity_mining_rig_2	= 0x0055;	// Mining rig sustain x3
-	upgrade_singularity_mining_rig_3	= 0x0056;	// Mining rig decay 50% slower
-	upgrade_singularity_ascend_1		= 0x0057;	// Singularity base cost -25%
+	upgrade_singularity_workers_1		= 0x0049;	// +1 Worker per reset
+	upgrade_singularity_workers_2		= 0x004a;	// +1 Worker / +20% mass gain
+	upgrade_singularity_workers_3		= 0x004b;	// +1 Worker / +25% anticapital gain
+	upgrade_singularity_workers_4		= 0x004c;	// +1 Worker / +50% metal value
+	upgrade_singularity_workers_5		= 0x004d;	// +2 Worker
+	upgrade_singularity_workers_6		= 0x004e;	// Keep worker upgrades on reset
+	upgrade_singularity_workers_7		= 0x004f;	// +0.5 Worker per reset
+	upgrade_singularity_workers_8		= 0x0050;	// +0.25 Worker per reset
+	upgrade_singularity_earth_value_1	= 0x0051;	// 3x coal particle value
+	upgrade_singularity_earth_value_2	= 0x0052;	// 1.5x singularity particle gain
+	upgrade_singularity_survey_1		= 0x0053;	// +1 Effective Survey
+	upgrade_singularity_survey_2		= 0x0054;	// +base jewel particle chance
+	upgrade_singularity_mining_rig_1	= 0x0055;	// Keep Mining Rig upgrades on reset
+	upgrade_singularity_mining_rig_2	= 0x0056;	// Mining rig sustain x3
+	upgrade_singularity_mining_rig_3	= 0x0057;	// Mining rig decay 50% slower
+	upgrade_singularity_ascend_1		= 0x0058;	// Singularity base cost -25%
 	
-	upgrade_count						= 0x0058;
+	upgrade_count						= 0x0059;
 } var uid = new _UPGRADE_ID();
 
 class _CHASM_UPGRADE {
@@ -205,7 +206,7 @@ function initUpgrades() {
 					"upgrade_earth_density_2",
 					"images/tile_research_earth_density_2.png",
 					[
-					150,	// Particles
+					5000,	// Particles
 					0,		// Strands
 					0,		// Spirit
 					0,		// Soul
@@ -618,6 +619,25 @@ function initUpgrades() {
 				);
 				break;
 
+			case uid.upgrade_earth_chance_6:
+				chasm_upgrades[i] = new _CHASM_UPGRADE(
+					"upgrade_earth_chance_6",
+					"images/tile_research_upgrade_unknown.png",
+					[
+					750,	// Particles
+					0,		// Strands
+					0,		// Spirit
+					0,		// Soul
+					0,		// Anticapital
+					0,		// Goo
+					0,		// Core
+					0,		// Bugs
+					0,		// Singularity
+					],
+					reset_level_singularity
+				);
+				break;
+
 			case uid.upgrade_earth_gather_speed_1:
 				chasm_upgrades[i] = new _CHASM_UPGRADE(
 					"upgrade_earth_gather_speed_1",
@@ -908,7 +928,7 @@ function initUpgrades() {
 					"upgrade_mining_rig_4",
 					"images/tile_research_upgrade_unknown.png",
 					[
-					750,	// Particles
+					2000,	// Particles
 					0,		// Strands
 					0,		// Spirit
 					0,		// Soul
@@ -1934,6 +1954,10 @@ function buy_upgrade(upgrade_id, free) {
 				chasm_storage[sid.storage_earth].refresh_survey();
 				break;
 
+			case uid.upgrade_earth_chance_6:
+				chasm_storage[sid.storage_earth].refresh_survey();
+				break;
+
 			case uid.upgrade_earth_metals_1:
 				$("#earth_survey").css("background-color", "#cfd8dc");
 				$("#earth_survey_content").css("visibility", "visible");
@@ -2661,11 +2685,14 @@ function generateResearchMapEarth() {
 	upgrade_map_earth[mapColRow(10, 17)]	.assign_tile(tid.tile_connect_rd, 	uid.upgrade_count,					[uid.upgrade_earth_value_6]																		);
 	upgrade_map_earth[mapColRow(11, 17)]	.assign_tile(tid.tile_connect_ulr, 	uid.upgrade_count,					[uid.upgrade_earth_value_6]																		);
 	upgrade_map_earth[mapColRow(12, 17)]	.assign_tile(tid.tile_connect_ld, 	uid.upgrade_count,					[uid.upgrade_earth_value_6]																		);
-	upgrade_map_earth[mapColRow(10, 18)]	.assign_tile(tid.tile_node, 		uid.upgrade_mining_rig_4,			[uid.upgrade_earth_value_6]				 														);
-	upgrade_map_earth[mapColRow(10, 19)]	.assign_tile(tid.tile_connect_ud, 	uid.upgrade_count,					[uid.upgrade_mining_rig_4]																		);
-	upgrade_map_earth[mapColRow(10, 20)]	.assign_tile(tid.tile_node, 		uid.upgrade_earth_value_13,			[uid.upgrade_mining_rig_4]																		);
+	upgrade_map_earth[mapColRow(10, 18)]	.assign_tile(tid.tile_node, 		uid.upgrade_earth_chance_6,			[uid.upgrade_earth_value_6]																		);
+	upgrade_map_earth[mapColRow(10, 19)]	.assign_tile(tid.tile_connect_ud, 	uid.upgrade_count,					[uid.upgrade_earth_value_6]																		);
+	upgrade_map_earth[mapColRow(10, 20)]	.assign_tile(tid.tile_node, 		uid.upgrade_earth_value_13,			[uid.upgrade_earth_value_6]																		);
 	upgrade_map_earth[mapColRow(12, 18)]	.assign_tile(tid.tile_node, 		uid.upgrade_earth_drop_speed_2,		[uid.upgrade_earth_value_6]				 														);
 	upgrade_map_earth[mapColRow(12, 19)]	.assign_tile(tid.tile_connect_ud, 	uid.upgrade_count,					[uid.upgrade_earth_drop_speed_2]																);
+	upgrade_map_earth[mapColRow(12, 20)]	.assign_tile(tid.tile_node, 		uid.upgrade_mining_rig_4,			[uid.upgrade_earth_drop_speed_2]				 												);
+	upgrade_map_earth[mapColRow(12, 21)]	.assign_tile(tid.tile_connect_ud, 	uid.upgrade_count,					[uid.upgrade_mining_rig_4]																		);
+	upgrade_map_earth[mapColRow(12, 22)]	.assign_tile(tid.tile_node, 		uid.upgrade_earth_density_2,		[uid.upgrade_mining_rig_4]				 														);
 	
 	// Intro Workers Zone
 	upgrade_map_earth[mapColRow(10, 2)]		.assign_tile(tid.tile_node, 		uid.upgrade_workers_1,																												);
