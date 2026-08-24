@@ -1444,7 +1444,7 @@ function initUpgrades() {
 					0,		// Strands
 					0,		// Spirit
 					0,		// Soul
-					4,		// Anticapital
+					8,		// Anticapital
 					0,		// Goo
 					0,		// Core
 					0,		// Bugs
