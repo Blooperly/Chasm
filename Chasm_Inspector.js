@@ -244,6 +244,10 @@ function setInspectorSubtext(html, redraw) {
 	}
 }
 
+function strikethrough(text) {
+	return "<span style = 'text-decoration: line-through; color: lightSlateGray;'>" + text + "</span>";
+}
+
 var flexbreak = "<div class='flexbreak'></div>";
 var elementbuffer = "<div class='element_sample_right_buffer'></div>";
 
@@ -1319,78 +1323,93 @@ function showInspector(id) {
 			setInspectorSubtext("", redraw_inspector);
 			break;
 		case iid.achievement_babys_first_block:
-			if (chasm_achievements[aid.achievement_babys_first_block].unlocked) {
-				setInspectorTitle("<img src = 'images/a_babys_first_block.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Baby's First Block", redraw_inspector);
-				setInspectorCost("", redraw_inspector);
-				setInspectorText("You still remember dropping your first block into the Chasm... Things were simpler back then.", redraw_inspector);
-				setInspectorDivider(false, redraw_inspector);
-				setInspectorSubtext("", redraw_inspector);
-			} else {
-				setInspectorTitle("<img src = 'images/a_babys_first_block.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>Baby's First Block", redraw_inspector);
-				setInspectorCost("", redraw_inspector);
-				setInspectorText("Drop 1 block of earth into the Chasm", redraw_inspector);
-				setInspectorDivider(false, redraw_inspector);
-				setInspectorSubtext("", redraw_inspector);
+			{
+				let req_string = "Drop 1 block of earth into the Chasm";
+				if (chasm_achievements[aid.achievement_babys_first_block].unlocked) {
+					setInspectorTitle("<img src = 'images/a_babys_first_block.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Baby's First Block", redraw_inspector);
+					setInspectorCost("", redraw_inspector);
+					setInspectorText(strikethrough(req_string) + "<br>You still remember dropping your first block into the Chasm... Things were simpler back then.", redraw_inspector);
+					setInspectorDivider(false, redraw_inspector);
+					setInspectorSubtext("", redraw_inspector);
+				} else {
+					setInspectorTitle("<img src = 'images/a_babys_first_block.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>Baby's First Block", redraw_inspector);
+					setInspectorCost("", redraw_inspector);
+					setInspectorText("", redraw_inspector);
+					setInspectorDivider(false, redraw_inspector);
+					setInspectorSubtext(req_string, redraw_inspector);
+				}
 			}
 			break;
 		case iid.achievement_reality_sprang_a_leak:
-			if (chasm_achievements[aid.achievement_reality_sprang_a_leak].unlocked) {
-				setInspectorTitle("<img src = 'images/a_reality_sprang.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Reality Sprang a Leak", redraw_inspector);
-				setInspectorCost("", redraw_inspector);
-				setInspectorText("Dropping things into the Chasm seems to release clouds of nothing. I'm pretty sure the universe isn't supposed to do that.", redraw_inspector);
-				setInspectorDivider(false, redraw_inspector);
-				setInspectorSubtext("", redraw_inspector);
-			} else {
-				setInspectorTitle("<img src = 'images/a_reality_sprang.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>Reality Sprang a Leak", redraw_inspector);
-				setInspectorCost("", redraw_inspector);
-				setInspectorText("Collect 1 total void particle", redraw_inspector);
-				setInspectorDivider(false, redraw_inspector);
-				setInspectorSubtext("", redraw_inspector);
+			{
+				let req_string = "Collect 1 total void particle";
+				if (chasm_achievements[aid.achievement_reality_sprang_a_leak].unlocked) {
+					setInspectorTitle("<img src = 'images/a_reality_sprang.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Reality Sprang a Leak", redraw_inspector);
+					setInspectorCost("", redraw_inspector);
+					setInspectorText(strikethrough(req_string) + "<br>Dropping things into the Chasm seems to release clouds of nothing. I'm pretty sure the universe isn't supposed to do that.", redraw_inspector);
+					setInspectorDivider(false, redraw_inspector);
+					setInspectorSubtext("", redraw_inspector);
+				} else {
+					setInspectorTitle("<img src = 'images/a_reality_sprang.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>Reality Sprang a Leak", redraw_inspector);
+					setInspectorCost("", redraw_inspector);
+					setInspectorText(req_string, redraw_inspector);
+					setInspectorDivider(false, redraw_inspector);
+					setInspectorSubtext("", redraw_inspector);
+				}
 			}
 			break;
 		case iid.achievement_nothing_to_worry_about:
-			if (chasm_achievements[aid.achievement_nothing_to_worry_about].unlocked) {
-				setInspectorTitle("<img src = 'images/a_nothing_to_worry_about.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Nothing to Worry About", redraw_inspector);
-				setInspectorCost("", redraw_inspector);
-				setInspectorText("How much nothing can there be, anyway?", redraw_inspector);
-				setInspectorDivider(false, redraw_inspector);
-				setInspectorSubtext("", redraw_inspector);
-			} else {
-				setInspectorTitle("<img src = 'images/a_nothing_to_worry_about.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>Nothing to Worry About", redraw_inspector);
-				setInspectorCost("", redraw_inspector);
-				setInspectorText("Collect 100 total void particles", redraw_inspector);
-				setInspectorDivider(false, redraw_inspector);
-				setInspectorSubtext("", redraw_inspector);
+			{
+				let req_string = "Collect 100 total void particles";
+				if (chasm_achievements[aid.achievement_nothing_to_worry_about].unlocked) {
+					setInspectorTitle("<img src = 'images/a_nothing_to_worry_about.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Nothing to Worry About", redraw_inspector);
+					setInspectorCost("", redraw_inspector);
+					setInspectorText(strikethrough(req_string) + "<br>How much nothing can there be, anyway?", redraw_inspector);
+					setInspectorDivider(false, redraw_inspector);
+					setInspectorSubtext("", redraw_inspector);
+				} else {
+					setInspectorTitle("<img src = 'images/a_nothing_to_worry_about.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>Nothing to Worry About", redraw_inspector);
+					setInspectorCost("", redraw_inspector);
+					setInspectorText(req_string, redraw_inspector);
+					setInspectorDivider(false, redraw_inspector);
+					setInspectorSubtext("", redraw_inspector);
+				}
 			}
 			break;
 		case iid.achievement_minor_case_of_wormhole:
-			if (chasm_achievements[aid.achievement_minor_case_of_wormhole].unlocked) {
-				setInspectorTitle("<img src = 'images/a_minor_case_of_wormhole.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>A Minor Case of Wormhole", redraw_inspector);
-				setInspectorCost("", redraw_inspector);
-				setInspectorText("Worms? In MY hole??", redraw_inspector);
-				setInspectorDivider(false, redraw_inspector);
-				setInspectorSubtext("", redraw_inspector);
-			} else {
-				setInspectorTitle("<img src = 'images/a_minor_case_of_wormhole.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>A Minor Case of Wormhole", redraw_inspector);
-				setInspectorCost("", redraw_inspector);
-				setInspectorText("Collect 10,000 total void particles", redraw_inspector);
-				setInspectorDivider(false, redraw_inspector);
-				setInspectorSubtext("", redraw_inspector);
+			{
+				let req_string = "Collect 10,000 total void particles";
+				if (chasm_achievements[aid.achievement_minor_case_of_wormhole].unlocked) {
+					setInspectorTitle("<img src = 'images/a_minor_case_of_wormhole.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>A Minor Case of Wormhole", redraw_inspector);
+					setInspectorCost("", redraw_inspector);
+					setInspectorText(strikethrough(req_string) + "<br>Worms? In MY hole??", redraw_inspector);
+					setInspectorDivider(false, redraw_inspector);
+					setInspectorSubtext("", redraw_inspector);
+				} else {
+					setInspectorTitle("<img src = 'images/a_minor_case_of_wormhole.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>A Minor Case of Wormhole", redraw_inspector);
+					setInspectorCost("", redraw_inspector);
+					setInspectorText(req_string, redraw_inspector);
+					setInspectorDivider(false, redraw_inspector);
+					setInspectorSubtext("", redraw_inspector);
+				}
 			}
 			break;
 		case iid.achievement_eye_feel_extremely_unwell:
-			if (chasm_achievements[aid.achievement_eye_feel_extremely_unwell].unlocked) {
-				setInspectorTitle("<img src = 'images/a_eye_feel_extremely_unwell.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Eye Feel Extremely Unwell", redraw_inspector);
-				setInspectorCost("", redraw_inspector);
-				setInspectorText("If you gaze long enough into the abyss... The abyss will sprout creepy eyes and wink at you.", redraw_inspector);
-				setInspectorDivider(false, redraw_inspector);
-				setInspectorSubtext("", redraw_inspector);
-			} else {
-				setInspectorTitle("<img src = 'images/a_eye_feel_extremely_unwell.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>Eye Feel Extremely Unwell", redraw_inspector);
-				setInspectorCost("", redraw_inspector);
-				setInspectorText("Collect 1,000,000 total void particles", redraw_inspector);
-				setInspectorDivider(false, redraw_inspector);
-				setInspectorSubtext("", redraw_inspector);
+			{
+				let req_string = "Collect 1,000,000 total void particles";
+				if (chasm_achievements[aid.achievement_eye_feel_extremely_unwell].unlocked) {
+					setInspectorTitle("<img src = 'images/a_eye_feel_extremely_unwell.png' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Eye Feel Extremely Unwell", redraw_inspector);
+					setInspectorCost("", redraw_inspector);
+					setInspectorText(strikethrough(req_string) + "<br>If you gaze long enough into the abyss... The abyss will sprout creepy eyes and wink at you.", redraw_inspector);
+					setInspectorDivider(false, redraw_inspector);
+					setInspectorSubtext("", redraw_inspector);
+				} else {
+					setInspectorTitle("<img src = 'images/a_eye_feel_extremely_unwell.png' class = 'pixelart locked_tile' width = '25' height = '25' style = 'margin-right: 6px;'>Eye Feel Extremely Unwell", redraw_inspector);
+					setInspectorCost("", redraw_inspector);
+					setInspectorText(req_string, redraw_inspector);
+					setInspectorDivider(false, redraw_inspector);
+					setInspectorSubtext("", redraw_inspector);
+				}
 			}
 			break;
 
