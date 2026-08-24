@@ -264,7 +264,7 @@ form {
 }
 
 #currency_box {
-	height: calc(100% - 22px);
+	height: calc(100vh - 22px);
 	padding: 10px 10px 10px 12px;
 }
 

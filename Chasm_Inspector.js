@@ -1403,5 +1403,5 @@ function showInspector(id) {
 
 	current_inspector_id = id;
 	let inspector_height = "-=" + $("#inspector_box").height() + "px";
-	$("#log_box").css("height", "100%").css("height", "-=49px").css("height", inspector_height);
+	$("#log_box").css("height", "100vh").css("height", "-=49px").css("height", inspector_height);
 }
