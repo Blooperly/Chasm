@@ -244,6 +244,9 @@ function setInspectorSubtext(html, redraw) {
 	}
 }
 
+var flexbreak = "<div class='flexbreak'></div>";
+var elementbuffer = "<div class='element_sample_right_buffer'></div>";
+
 var current_inspector_id = iid.none; // Saved id of current inspector panel. Used to redraw inspector.
 
 function showInspector(id) {
@@ -695,161 +698,161 @@ function showInspector(id) {
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_density_1].cost.stringify(), true);
 			setInspectorText("You can fit a lot more dirt into your storage with a few well-placed stomps", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("2x Earth density", redraw_inspector);
+			setInspectorSubtext("2x earthworks density", redraw_inspector);
 			break;
 		case iid.upgrade_earth_density_2:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Tamping Rod", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_density_2].cost.stringify(), true);
 			setInspectorText("A long stick with a flat metal plate at one end. The perfect tool for squishing dirt or less lethal jousting.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("2x Earth density", redraw_inspector);
+			setInspectorSubtext("2x earthworks density", redraw_inspector);
 			break;
 		case iid.upgrade_earth_density_3:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Trash Compactor", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_density_3].cost.stringify(), true);
 			setInspectorText("A repurposed trash compactor can smash earth into a dense cube. Ignore the stench and raccoons.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("2x Earth density", redraw_inspector);
+			setInspectorSubtext("2x earthworks density", redraw_inspector);
 			break;
 		case iid.upgrade_earth_density_4:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Macrosonic Agitator", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_density_4].cost.stringify(), true);
 			setInspectorText("A marvel of modern science. Vibrates the earth at incredible frequencies to squeeze out every last bit of empty space.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("2x Earth density", redraw_inspector);
+			setInspectorSubtext("2x earthworks density", redraw_inspector);
 			break;
 		case iid.upgrade_earth_density_5:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Gravity Well", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_density_5].cost.stringify(), true);
 			setInspectorText("A miniature black hole which can compact earth to a ridiculous degree. You can also say it ate your homework.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("2x Earth density", redraw_inspector);
+			setInspectorSubtext("2x earthworks density", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_1:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Dustbusting", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_1].cost.stringify(), true);
 			setInspectorText("By filtering out some of the lighter dust you can make your earth particles more valuable.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+100% dirt particle value", redraw_inspector);
+			setInspectorSubtext("+100% " + ElementSample(eid.element_earth) + elementbuffer + "dirt particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_2:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Industrial Waste Handling", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_2].cost.stringify(), true);
 			setInspectorText("Our operation is starting to produce a good amount of oily waste... Might as well dump that stuff right into the ground!", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+50% dirt particle value<br>+100% copper particle value", redraw_inspector);
+			setInspectorSubtext("+50% " + ElementSample(eid.element_earth) + elementbuffer + "dirt particle value" + flexbreak + "+100% " + ElementSample(eid.element_copper) + elementbuffer + "copper particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_3:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Heavy Metal Poisoning", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_3].cost.stringify(), true);
 			setInspectorText("Bad news, you all have symptoms of heavy metal poisoning. Good news, you can now find even heavier metals!", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+50% metal particle value", redraw_inspector);
+			setInspectorSubtext("+50% " + ElementSample(eid.element_copper) + ElementSample(eid.element_iron) + ElementSample(eid.element_lead) + ElementSample(eid.element_gold) + elementbuffer + "metal particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_4:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Marble Quarry", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_4].cost.stringify(), true);
 			setInspectorText("This is the perfect spot for finding greek statues, kitchen counters, or food for the unquenchable cosmic maw.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+50% stone particle value", redraw_inspector);
+			setInspectorSubtext("+50% " + ElementSample(eid.element_stone) + elementbuffer + "stone particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_5:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>The Economicon", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_5].cost.stringify(), true);
 			setInspectorText("You have acquired a forbidden tome containing eldritch secrets of accounting and economics. Summoning a few finance demons will allow you to artificially inflate the value of emeralds. Neat!", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+50% emerald particle value", redraw_inspector);
+			setInspectorSubtext("+50% " + ElementSample(eid.element_emerald) + elementbuffer + "emerald particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_6:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Cement Plant", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_6].cost.stringify(), true);
 			setInspectorText("A large facility for turning sandy clay and gravel into construction grade cement and concrete. This is a great way to increase the value of your mineshaft byproducts, and will enable even more elaborate construction projects in the future.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+50% dirt particle value<br>+100% stone particle value", redraw_inspector);
+			setInspectorSubtext("+50% " + ElementSample(eid.element_earth) + elementbuffer + "dirt particle value" + flexbreak + "+100% " + ElementSample(eid.element_stone) + elementbuffer + "stone particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_7:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Crypt Coins", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_7].cost.stringify(), true);
 			setInspectorText("Your dark powers have grown. You are now able to mint completely valueless coins out of iron. But you can probably convince the Chasm that these coins are \"totally real\" and \"going to the moon\" or something stupid like that.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+300% iron particle value", redraw_inspector);
+			setInspectorSubtext("+300% " + ElementSample(eid.element_iron) + elementbuffer + "iron particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_8:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Catastrophic Converter", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_8].cost.stringify(), true);
 			setInspectorText("Your researchers have created a machine that enriches coal to be much more fuel-dense, at the cost of being slightly more incredibly harmful for the ozone layer.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+100% coal particle value", redraw_inspector);
+			setInspectorSubtext("+100% " + ElementSample(eid.element_coal) + elementbuffer + "coal particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_9:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Poison Swamp", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_9].cost.stringify(), true);
 			setInspectorText("The chemical sludge produced by your mining operation has created a toxic swampland at the edge of the Chasm. Time to buy some wading pants.<br><br>\"But when making the game I rediscovered my love for making poison swamps. I know how people feel about them, but you know, suddenly I realize I'm in the middle of making one and I just can't help myself. <a href = 'https://x.com/hausofdecline/status/1760748342852673658?s=20' target = '_blank'>It just happens.</a>\"", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+100% dirt particle value<br>+100% copper particle value", redraw_inspector);
+			setInspectorSubtext("+100% " + ElementSample(eid.element_earth) + elementbuffer + "dirt particle value" + flexbreak + "+100% " + ElementSample(eid.element_copper) + elementbuffer + "copper particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_10:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Ingot Casting Line", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_10].cost.stringify(), true);
 			setInspectorText("This is a much cooler way to store all your metal before dumping it into the Chasm. Sometimes you like to build little castles out of the metal bricks.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+200% metal particle mass", redraw_inspector);
+			setInspectorSubtext("+200% " + ElementSample(eid.element_copper) + ElementSample(eid.element_iron) + ElementSample(eid.element_lead) + ElementSample(eid.element_gold) + elementbuffer + "metal particle mass", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_11:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Jewel Pods", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_11].cost.stringify(), true);
 			setInspectorText("Your environmental crimes have forever changed the chemical makeup of the soil beneath your feet. All the jewels in your mine are now mango-bubblegum flavor. Touching them permanently stains your hands though.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+200% jewel particle mass", redraw_inspector);
+			setInspectorSubtext("+200% " + ElementSample(eid.element_emerald) + ElementSample(eid.element_sapphire) + ElementSample(eid.element_ruby) + ElementSample(eid.element_diamond) + elementbuffer + "jewel particle mass", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_12:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Coal Doping", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_12].cost.stringify(), true);
 			setInspectorText("Pumping nitrogen into your coal deposits reduces the oxygen content of the porous rock, making the coal burn hotter and longer. Doesn't get the coal high.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+50% coal particle value", redraw_inspector);
+			setInspectorSubtext("+50% " + ElementSample(eid.element_coal) + elementbuffer + "coal particle value", redraw_inspector);
 			break;
 		case iid.upgrade_earth_value_13:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Warehouse Expansion", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_value_13].cost.stringify(), true);
 			setInspectorText("Your growing industrial facility demands a larger storage space for supplies and intermediary products. This upgrade will especially improve your bulk resource processing.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+25% Void Particle gain", redraw_inspector);
+			setInspectorSubtext("+25%" + chasm_currency[cid.currency_particles].inspector_symbol + "Void Particle gain", redraw_inspector);
 			break;
 		case iid.upgrade_earth_chance_1:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Fifty Shades of Green", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_chance_1].cost.stringify(), true);
 			setInspectorText("The hot new book about emerald mining. Lots of pictures of glistening, shirtless miners. Also a few tips on where to find more emeralds.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+2% base emerald chance", redraw_inspector);
+			setInspectorSubtext("+2% base " + ElementSample(eid.element_emerald) + elementbuffer + "emerald chance", redraw_inspector);
 			break;
 		case iid.upgrade_earth_chance_2:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Penny Flavored Gum", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_chance_2].cost.stringify(), true);
 			setInspectorText("This stuff is disgusting, but you kind of want another piece. Really gets you in the mood to find more copper.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+2% base copper chance", redraw_inspector);
+			setInspectorSubtext("+2% base " + ElementSample(eid.element_copper) + elementbuffer + "copper chance", redraw_inspector);
 			break;
 		case iid.upgrade_earth_chance_3:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Spare Lungs", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_chance_3].cost.stringify(), true);
 			setInspectorText("A freezer full of totally legal transplant lungs, just in case all this mining is bad for your health. Not actually that expensive if you buy in bulk.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+0.5% base coal chance", redraw_inspector);
+			setInspectorSubtext("+0.5% base " + ElementSample(eid.element_coal) + elementbuffer + "coal chance", redraw_inspector);
 			break;
 		case iid.upgrade_earth_chance_4:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Lucky Skipping Stone", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_chance_4].cost.stringify(), true);
 			setInspectorText("This perfectly flat river rock makes you feel a little bit lucky. You could get eight, maybe nine skips out of this bad boy.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("Increased chance to find stone instead of dirt, even at shallow depths", redraw_inspector);
+			setInspectorSubtext("Increased chance to find" + ElementSample(eid.element_stone) + elementbuffer + "stone" + flexbreak + "instead of" + ElementSample(eid.element_earth) + elementbuffer + "dirt, even at shallow depths", redraw_inspector);
 			break;
 		case iid.upgrade_earth_chance_5:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Jackpot State of Mind", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_chance_5].cost.stringify(), true);
 			setInspectorText("Gambling is a scam. This upgrade is almost certainly not worth it, but you are going to buy it anyway. All the subliminal advertising in this game is starting to pay off.<br><br><span style = 'font-size: 4px;'>buy Our Queen Crumbles <a href = 'https://blooperly.itch.io/our-queen-crumbles' target = '_blank'>here</a></span>", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+0.1% base diamond chance, even at shallow depths", redraw_inspector);
+			setInspectorSubtext("+0.1% base " + ElementSample(eid.element_diamond) + elementbuffer + "diamond chance," + flexbreak + "even at shallow depths", redraw_inspector);
 			break;
 		case iid.upgrade_earth_gather_speed_1:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Shovel Lotion", redraw_inspector);
@@ -870,14 +873,14 @@ function showInspector(id) {
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_drop_speed_1].cost.stringify(), true);
 			setInspectorText("A pulley system is much better than the pushy system you were using before.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+20% earth dropping speed", redraw_inspector);
+			setInspectorSubtext("+20% earthworks dropping speed", redraw_inspector);
 			break;
 		case iid.upgrade_earth_drop_speed_2:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Spring-loaded Elevator", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_drop_speed_2].cost.stringify(), true);
 			setInspectorText("The first version of this elevator played jack-in-the-box music, but everyone hated it. Now it plays Weezer.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+10% earth dropping speed", redraw_inspector);
+			setInspectorSubtext("+10% earthworks dropping speed", redraw_inspector);
 			break;
 		case iid.upgrade_earth_metals_1:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Surveying Tools", redraw_inspector);
@@ -891,14 +894,14 @@ function showInspector(id) {
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_depth_1].cost.stringify(), true);
 			setInspectorText("It feels a bit silly to dig next to the yawning mouth of the Chasm, but there's some really good stuff down there.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("Unlock deep mining<br>+1 Heavy Machinery", redraw_inspector);
+			setInspectorSubtext("Unlock deep mining" + flexbreak + "+1" + chasm_currency[cid.currency_machinery].inspector_symbol + "Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_earth_depth_2:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Notarized Mining Rights", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_depth_2].cost.stringify(), true);
 			setInspectorText("Your old mining permit was a bit... forged. This one should stand up to even moderate scrutiny!", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
+			setInspectorSubtext("max depth +1" + flexbreak + "+1" + chasm_currency[cid.currency_machinery].inspector_symbol + "Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_earth_depth_3:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Bloodpact Mining Rights", redraw_inspector);
@@ -912,28 +915,28 @@ function showInspector(id) {
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_depth_4].cost.stringify(), true);
 			setInspectorText("This document is now so laden with ink, blood, and wax seals that it is barely legible. Your legal team is thrilled.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
+			setInspectorSubtext("max depth +1" + flexbreak + "+1" + chasm_currency[cid.currency_machinery].inspector_symbol + "Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_earth_depth_5:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Royal Mining Rights", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_depth_5].cost.stringify(), true);
 			setInspectorText("The Fringe Researcher has spent his free time tracing the lineage of the royal family who used to own the land around the Chasm. The heir is willing to sell you ancient land rights, for a price.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
+			setInspectorSubtext("max depth +1" + flexbreak + "+1" + chasm_currency[cid.currency_machinery].inspector_symbol + "Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_earth_depth_6:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Deep Mining Rights", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_depth_6].cost.stringify(), true);
 			setInspectorText("You had your lawyers add in a few clauses protecting you from any liability for \"accidental plate shattering, geo-terrorism, and/or volcanic armageddon\"", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
+			setInspectorSubtext("max depth +1" + flexbreak + "+1" + chasm_currency[cid.currency_machinery].inspector_symbol + "Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_earth_depth_7 :
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Blessed Mining Rights", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_earth_depth_7].cost.stringify(), true);
 			setInspectorText("Apparently the only way to dig \"all the way to Hell\" is to get your documentation blessed. You should keep an eye out for God in the Chasm, maybe he will help you out.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
+			setInspectorSubtext("max depth +1" + flexbreak + "+1" + chasm_currency[cid.currency_machinery].inspector_symbol + "Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_mining_rig_1:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>There Will Be Dirt", redraw_inspector);
@@ -996,7 +999,7 @@ function showInspector(id) {
 			setInspectorCost(chasm_upgrades[uid.upgrade_water_value_1].cost.stringify(), true);
 			setInspectorText("It turns out natural water is clear, not electric blue like the ocean in a movie. Your researches say that a generous dose of food coloring will improve the hydration.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+100% water particle value", redraw_inspector);
+			setInspectorSubtext("+100% " + ElementSample(eid.element_water) + elementbuffer + "water particle value", redraw_inspector);
 			break;
 		case iid.upgrade_water_value_2:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Value 2", redraw_inspector);
@@ -1059,210 +1062,210 @@ function showInspector(id) {
 			setInspectorCost(chasm_upgrades[uid.upgrade_water_depth_1].cost.stringify(), true);
 			setInspectorText("Harvesting fish from deeper in the ocean will require specialized equipment to pump liquid and keep your fishermen alive. An industrial diving bell is a good platform for venturing into the depths.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("Unlock deep pumping<br>+1 Heavy Machinery", redraw_inspector);
+			setInspectorSubtext("Unlock deep pumping" + flexbreak + "+1" + chasm_currency[cid.currency_machinery].inspector_symbol + "Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_water_depth_2:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 2", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_water_depth_2].cost.stringify(), true);
 			setInspectorText("", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
+			setInspectorSubtext("max depth +1" + flexbreak + "+1" + chasm_currency[cid.currency_machinery].inspector_symbol + "Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_water_depth_3:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 3", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_water_depth_3].cost.stringify(), true);
 			setInspectorText("", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
+			setInspectorSubtext("max depth +1" + flexbreak + "+1" + chasm_currency[cid.currency_machinery].inspector_symbol + "Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_water_depth_4:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 4", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_water_depth_4].cost.stringify(), true);
 			setInspectorText("", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
+			setInspectorSubtext("max depth +1" + flexbreak + "+1" + chasm_currency[cid.currency_machinery].inspector_symbol + "Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_water_depth_5:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 5", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_water_depth_5].cost.stringify(), true);
 			setInspectorText("", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
+			setInspectorSubtext("max depth +1" + flexbreak + "+1" + chasm_currency[cid.currency_machinery].inspector_symbol + "Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_water_depth_6:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 6", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_water_depth_6].cost.stringify(), true);
 			setInspectorText("", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
+			setInspectorSubtext("max depth +1" + flexbreak + "+1" + chasm_currency[cid.currency_machinery].inspector_symbol + "Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_water_depth_7:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Water Depth 7", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_water_depth_7].cost.stringify(), true);
 			setInspectorText("", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("max depth +1<br>+1 Heavy Machinery", redraw_inspector);
+			setInspectorSubtext("max depth +1" + flexbreak + "+1" + chasm_currency[cid.currency_machinery].inspector_symbol + "Heavy Machinery", redraw_inspector);
 			break;
 		case iid.upgrade_workers_1:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Fringe Researcher", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_workers_1].cost.stringify(), true);
 			setInspectorText("You know a guy who would be very interested in studying the exotic materials coming out of the Chasm. He is a bit of a conspiracy nut, but you can probably convince him to shovel dirt.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1 Worker", redraw_inspector);
+			setInspectorSubtext("+1" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker", redraw_inspector);
 			break;
 		case iid.upgrade_workers_2:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Internship Program", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_workers_2].cost.stringify(), true);
 			setInspectorText("Filling the Chasm is exhausting—just get a college student to do it. All the labor of an employee with none of the pay!", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1 Worker", redraw_inspector);
+			setInspectorSubtext("+1" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker", redraw_inspector);
 			break;
 		case iid.upgrade_workers_3:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Gig Worker", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_workers_3].cost.stringify(), true);
 			setInspectorText("You found an app where you can hire manual labor for cheap! Hopefully the regulators don't catch on.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1 Worker", redraw_inspector);
+			setInspectorSubtext("+1" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker", redraw_inspector);
 			break;
 		case iid.upgrade_workers_4:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Old Timey Prospector", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_workers_4].cost.stringify(), true);
 			setInspectorText("This old coot is willing to help you fill the Chasm, but first you must prove that there is ore in them there hills.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1 Worker", redraw_inspector);
+			setInspectorSubtext("+1" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker", redraw_inspector);
 			break;
 		case iid.upgrade_workers_5:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Creepy Twins", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_workers_5].cost.stringify(), true);
 			setInspectorText("The Fringe Researcher has reported a pair of creepy children haunting the dark corners of the worksite... Is it even child labor if the children are ghosts?", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+2 Workers", redraw_inspector);
+			setInspectorSubtext("+2" + chasm_currency[cid.currency_workers].inspector_symbol + "Workers", redraw_inspector);
 			break;
 		case iid.upgrade_workers_6:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>HR Department", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_workers_6].cost.stringify(), true);
 			setInspectorText("It seems like you can't grow your team much more without a hearty stockpile of office snacks, a bevy of teambuilding exercises, and 30 hours of incredibly boring training videos.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1 Worker<br>+10% Worker Efficiency", redraw_inspector);
+			setInspectorSubtext("+1" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker" + flexbreak + "+10%" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker efficiency", redraw_inspector);
 			break;
 		case iid.upgrade_workers_7:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Survey Crew", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_workers_7].cost.stringify(), true);
 			setInspectorText("A bunch of guys with hardhats will significantly improve your mining survey capabilities. The hardhats are key.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+2 Workers<br>+30% Survey Efficiency", redraw_inspector);
+			setInspectorSubtext("+2" + chasm_currency[cid.currency_workers].inspector_symbol + "Workers" + flexbreak + "+30% Survey efficiency", redraw_inspector);
 			break;
 		case iid.upgrade_workers_8:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Monocle Guy", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_workers_8].cost.stringify(), true);
 			setInspectorText("Every company needs a fancy old man with a top hat and monocle to peer intensely at their gems and crystals. Why else would you dig up gems and crystals?", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1 Worker<br>+20% Jewel Value", redraw_inspector);
+			setInspectorSubtext("+1" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker" + flexbreak + "+20% " + ElementSample(eid.element_emerald) + ElementSample(eid.element_sapphire) + ElementSample(eid.element_ruby) + ElementSample(eid.element_diamond) + elementbuffer + "jewel particle value", redraw_inspector);
 			break;
 		case iid.upgrade_workers_9:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Jackhammer Jockey", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_workers_9].cost.stringify(), true);
 			setInspectorText("The cowboys of the modern construction crew. A short ride on the iron stallion will shatter even the most stubborn boulders. They are also really good on a pogo stick.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1 Worker<br>+10% earthworks gathering speed", redraw_inspector);
+			setInspectorSubtext("+1" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker" + flexbreak + "+10% earthworks gathering speed", redraw_inspector);
 			break;
 		case iid.upgrade_workers_10:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Italian Plumber", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_workers_10].cost.stringify(), true);
 			setInspectorText("Not the one you are thinking of. Or the other one you are thinking of.<br><br>This guy even knows where to dig up some copper pipes.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1 Worker<br>+50% copper particle value", redraw_inspector);
+			setInspectorSubtext("+1" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker" + flexbreak + "+50% " + ElementSample(eid.element_copper) + elementbuffer + "copper particle value", redraw_inspector);
 			break;
 		case iid.upgrade_workers_11:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Gas Station Attendant", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_workers_11].cost.stringify(), true);
 			setInspectorText("Winner of the 1994 Gas Station Olympics in Barcelona. He's no longer in his prime, but he is still pretty good at fueling vehicles.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1 Worker<br>+1s Mining Rig sustain", redraw_inspector);
+			setInspectorSubtext("+1" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker" + flexbreak + "+1s Mining Rig sustain", redraw_inspector);
 			break;
 		case iid.upgrade_workers_12:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Dedicated Salaryman", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_workers_12].cost.stringify(), true);
 			setInspectorText("This guy will do anything for a moderate salary and some really bad healthcare. His job is the center of the universe, his reason for being. He is the perfect drone.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1 Worker", redraw_inspector);
+			setInspectorSubtext("+1" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker", redraw_inspector);
 			break;
 		case iid.upgrade_challenge_ecocide:
-			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Ecocide Prevention", redraw_inspector);
+			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Challenge: Ecocide Prevention", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_challenge_ecocide].cost.stringify(), true);
 			setInspectorText("You had the chance to destroy the environment for your own personal profit, but you didn't do it! Good job! You are a hero.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1 Ecocide Token on singularity", redraw_inspector);
+			setInspectorSubtext("+1" + chasm_currency[cid.currency_challenge_1].inspector_symbol + "Ecocide Token on singularity", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_workers_1:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Doppelgänger", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_workers_1].cost.stringify(), true);
 			setInspectorText("After jumping into the Chasm you wake up on the surface once again, but this time you are not alone. The Chasm is empty and the work site has disappeared, but there is another version of you just starting to get to work.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1 Worker per Singularity reset<br>(max 5)", redraw_inspector);
+			setInspectorSubtext("+1" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker per Singularity reset" + flexbreak + "(max 5)", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_workers_2:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Bigfoot", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_workers_2].cost.stringify(), true);
 			setInspectorText("This universe is the only one where Bigfoot exists, and he looks almost exactly like the Fringe Researcher. You had better bring him with you.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1 Worker<br>+20% Mass gain", redraw_inspector);
+			setInspectorSubtext("+1" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker" + flexbreak + "+20%" + chasm_currency[cid.currency_mass].inspector_symbol + "Mass gain", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_workers_3:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Intern Sarcophagus", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_workers_3].cost.stringify(), true);
 			setInspectorText("You have crafted a grim and terrible artefact which can carry a single Intern through the Chasm, across the threshold between worlds. They still won't be paid.<br>Don't forget to poke a few air holes.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1 Worker<br>+25% Anticapital gain", redraw_inspector);
+			setInspectorSubtext("+1" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker" + flexbreak + "+25%" + chasm_currency[cid.currency_capital].inspector_symbol + "Anticapital gain", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_workers_4:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Timey Wimey Prospector", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_workers_4].cost.stringify(), true);
 			setInspectorText("The prospector in this universe is young, British, and weirdly hot. He seems to know a lot about temporal paradoxes. It's probably a good idea to hire someone who can tell you if you are about to destroy the universe.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1 Worker<br>+50% metal particle value", redraw_inspector);
+			setInspectorSubtext("+1" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker" + flexbreak + "+50% " + ElementSample(eid.element_copper) + ElementSample(eid.element_iron) + ElementSample(eid.element_lead) + ElementSample(eid.element_gold) + elementbuffer + "metal particle value", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_workers_5:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Creepier Twins", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_workers_5].cost.stringify(), true);
 			setInspectorText("The twins are way more evil after traveling through the Chasm. Their eyes glow, they crab walk everywhere, and one of them ate your lunch. These guys are the worst.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+2 Workers", redraw_inspector);
+			setInspectorSubtext("+2" + chasm_currency[cid.currency_workers].inspector_symbol + "Workers", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_workers_6:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Omniversal HR Department", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_workers_6].cost.stringify(), true);
 			setInspectorText("The HR department has figured out how to hire staff across every parallel universe at once. This will save a ton of time on recruiting, but company parties are going to get much harder to plan.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("Keep first 6 worker upgrades on reset<br>+1 Worker<br>+10% Worker Efficiency", redraw_inspector);
+			setInspectorSubtext("Keep first 6" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker upgrades on reset"+ flexbreak + "+1" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker" + flexbreak + "+10%" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker efficiency", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_workers_7:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Trippelgänger", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_workers_7].cost.stringify(), true);
 			setInspectorText("You have found a way to copy your Doppelgängers using the Chasm. These ones seem a bit... off. But small heads and extra arms are good for mining, right?", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1 Worker per 2 Singularity resets<br>(after Doppelgänger)<br>(max 5)", redraw_inspector);
+			setInspectorSubtext("+1" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker per 2 Singularity resets" + flexbreak + "(after Doppelgänger maxed)" + flexbreak + "(max 5)", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_workers_8:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Gängerbanger", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_workers_8].cost.stringify(), true);
 			setInspectorText("You have found a way to copy your Trippelgängers using the Chasm. Don't look too hard at these guys, they are only barely passable as human. It seems that repeated paracausal cloning is not good for the human form.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1 Worker per 4 Singularity resets<br>(after Trippelgänger)<br>(max 5)", redraw_inspector);
+			setInspectorSubtext("+1" + chasm_currency[cid.currency_workers].inspector_symbol + "Worker per 4 Singularity resets" + flexbreak + "(after Trippelgänger maxed)" + flexbreak + "(max 5)", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_earth_value_1:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Gate to Hell", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_earth_value_1].cost.stringify(), true);
 			setInspectorText("You accidentally set the mines on fire, and the vast coal seams contain enough energy to burn for decades. On the plus side, flaming coal is worth more than regular coal.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+100% coal particle value", redraw_inspector);
+			setInspectorSubtext("+100% " + ElementSample(eid.element_coal) + elementbuffer + "coal particle value", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_earth_value_2:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>The Atoms Family Issue #1", redraw_inspector);
 			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_earth_value_2].cost.stringify(), true);
 			setInspectorText("Your employees have organized a Void Particle Physics Fan Club. One of them has even written a fan-fic comic where two particles fall in love and start a family. It's a bit weird, but it seems to be working.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+50% Void Particle gain", redraw_inspector);
+			setInspectorSubtext("+50%" + chasm_currency[cid.currency_particles].inspector_symbol + "Void Particle gain", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_survey_1:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Reverse Precognition", redraw_inspector);
@@ -1276,7 +1279,7 @@ function showInspector(id) {
 			setInspectorCost(chasm_upgrades[uid.upgrade_singularity_survey_2].cost.stringify(), true);
 			setInspectorText("Upgrade your mining lanterns to sweet RGB LEDs instead of lame oil. This will obviously increase the game's FPS.", redraw_inspector);
 			setInspectorDivider(true, redraw_inspector);
-			setInspectorSubtext("+1% base emerald chance<br>+0.5% base sapphire chance<br>+0.1% base ruby chance", redraw_inspector);
+			setInspectorSubtext("+1% base " + ElementSample(eid.element_emerald) + elementbuffer + "emerald chance" + flexbreak + "+0.5% base " + ElementSample(eid.element_sapphire) + elementbuffer + "sapphire chance" + flexbreak + "+0.1% base " + ElementSample(eid.element_ruby) + elementbuffer + "ruby chance", redraw_inspector);
 			break;
 		case iid.upgrade_singularity_mining_rig_1:
 			setInspectorTitle("<img src = '" + chasm_upgrades[id - iid.offset_upgrades].upgrade_image + "' class = 'pixelart' width = '25' height = '25' style = 'margin-right: 6px;'>Subspace Mining Rig", redraw_inspector);

@@ -122,6 +122,11 @@ form {
 	flex-wrap: wrap;
 }
 
+.flexbreak {
+  flex-basis: 100%;
+  height: 0;
+}
+
 .unflex {
 	display: block;
 }
@@ -167,6 +172,10 @@ form {
 	border-width: 1px;
 	border-color: #242424;
 	border-style: solid;
+}
+
+.element_sample_right_buffer {
+	width: 3px;
 }
 
 .element_sample_fish {
@@ -358,6 +367,7 @@ form {
 
 #inspector_subtext {
 	font-size: 14px;
+	flex-wrap: wrap;
 }
 
 #log_box {
